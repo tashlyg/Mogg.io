@@ -1,0 +1,25 @@
+body {
+    background-color: azure;
+}
+
+h1 {
+    color:black;
+    font-size: 50px;
+}
+
+table {
+    border: 2px solid black;
+}
+
+th {
+    border: 1px solid black;
+    padding: 8px;
+    background-color: darkblue;
+    color:white;
+}
+td {
+    border: 1px solid black;
+    padding: 8px;
+    background-color: darkcyan;
+    color:white;
+}
