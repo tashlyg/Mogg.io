@@ -186,7 +186,7 @@ footer a {
 
 .video-container {
   display: flex;
-  justify-content: center; /* Horizontally centers the iframe */
-  align-items: center;     /* Vertically centers (if container has height) */
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
