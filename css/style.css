@@ -183,3 +183,10 @@ footer p {
 footer a {
   color: var(--color-accent);
 }
+
+.video-container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the iframe */
+  align-items: center;     /* Vertically centers (if container has height) */
+  width: 100%;
+}
