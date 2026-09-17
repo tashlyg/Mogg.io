@@ -5,12 +5,21 @@
   --color-card: #ffffff;
   --color-text: #22282b;
   --color-border: #e0dcd4;
+  --color-bg-japas: #c1fdff;
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Verdana, sans-serif;
   background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.body {
+  margin: 0;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  background-color: var(--color-bg-japas);
   color: var(--color-text);
   line-height: 1.6;
 }
