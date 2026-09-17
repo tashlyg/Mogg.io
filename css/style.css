@@ -128,3 +128,49 @@ footer {
   padding: 1.5rem 5vw;
   margin-top: 2rem;
 }
+
+/*Descendant selectors*/
+.site-nav a {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.site-nav a:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hobby-table td {
+  color: var(--color-text);
+}
+
+#contact-form label {
+  font-weight: 600;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer a {
+  color: var(--color-accent);
+}
