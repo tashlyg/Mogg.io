@@ -183,3 +183,10 @@ footer p {
 footer a {
   color: var(--color-accent);
 }
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
