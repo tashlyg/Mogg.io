@@ -79,10 +79,11 @@ th {
 
 .site-nav {
   background-color: var(--color-primary);
-  padding: 1rem 2rem;
+  padding: 10px 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .container {
@@ -142,7 +143,7 @@ footer {
 .site-nav a {
   color: #fff;
   font-weight: 600;
-  padding: 0.5rem 1rem;
+  padding: 20px 50px;
   border-radius: 6px;
   transition: background 0.2s ease;
 }
@@ -151,6 +152,11 @@ footer {
   background-color: var(--color-accent);
   color: #fff;
   text-decoration: none;
+}
+
+.site-nav img {
+  width: 100px;
+  border-radius: 50%;
 }
 
 .hobby-table td {
