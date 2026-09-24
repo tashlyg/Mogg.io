@@ -18,6 +18,7 @@ themed around grooming, style, and general "looksmaxxing" tips.
 | `about1.html` | About page for Bekzhan, with bio, hobbies table, routine, and goals |
 | `about2.html` | About page for Didar, with bio, hobbies table, fish tier list, and goals |
 | `contacts.html` | Contact page with a form (name, email, color picker, message) |
+| `gallery.html` | Didar's nine-image fish gallery with hover and keyboard-focus captions |
 
 ## Project Structure
 
@@ -27,20 +28,29 @@ Mogg.io/
 ├── about1.html
 ├── about2.html
 ├── contacts.html
+├── gallery.html
 ├── css/
 │   └── style.css
 ├── assets/
 │   ├── beka.jpg
 │   ├── fish.png
-│   └── contactus.png
+│   ├── contactus.png
+│   ├── mogg_face.png
+│   ├── skincare.png
+│   ├── grooming.png
+│   ├── posture.png
+│   └── fih/ (fih1.png through fih9.png)
 └── README.md
 ```
 
 ## Tech Used
 
 - HTML5 (semantic tags, tables, forms, lists)
-- CSS3 (custom properties, flexbox, box model, media queries) — no frameworks
+- CSS3 (custom properties, Flexbox, Grid, box model) — no frameworks
 - All pages share a single stylesheet: `css/style.css`
+- Flexbox navigation and equal-height homepage cards with a hover effect
+- Grid page layout with a header, left sidebar, main content, and full-width footer
+- Three-column image gallery with equal-sized cells and caption overlays
 
 ## Running Locally
 
