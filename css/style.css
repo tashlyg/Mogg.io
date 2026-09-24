@@ -170,7 +170,8 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1.5rem 5vw;
-  margin-top: 2rem;
+  margin-top: 0;
+  grid-area: footer;
 }
 
 /*Descendant selectors*/
@@ -229,4 +230,38 @@ footer a {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+* { box-sizing: border-box; }
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+.site-header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.page-main { grid-area: main; min-width: 0; }
+
+
+.sidebar {
+  align-self: start;
+  margin-left: 1rem;
+  padding: 1rem;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
