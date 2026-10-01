@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-layout m-0 gap-4">
+<body class="m-0">
     <header class="site-header">
         <nav class="navbar navbar-expand-lg bg-dark site-nav" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container-fluid">
@@ -28,6 +28,9 @@
             </div>
         </nav>
     </header>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-12 col-lg-2">
     <aside class="sidebar ms-3 p-3">
         <h2>Explore Mogg.io</h2>
         <p class="my-2">Meet the team and build your daily routine.</p>
@@ -39,52 +42,98 @@
             <a href="gallery.html" aria-current="page">Image gallery</a>
         </nav>
     </aside>
-    <main class="page-main">
+    </div>
+    <main class="col-12 col-lg-10">
         <header id="main-header" class="container pt-3 pt-lg-4 pb-3 px-3 px-lg-5">
             <h1>Didar's fih gallery</h1>
             <p class="my-2">It's just here.</p>
         </header>
         <div class="container">
-            <div class="gallery gap-4">
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih1.png" alt="fih1">
-                    <figcaption class="p-2 p-lg-3">Hammered shark</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih2.png" alt="fih2">
-                    <figcaption class="p-2 p-lg-3">Manta ray</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih3.png" alt="fih3">
-                    <figcaption class="p-2 p-lg-3">Whale shark</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih4.png" alt="fih4">
-                    <figcaption class="p-2 p-lg-3">Sailfish</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih5.png" alt="fih5">
-                    <figcaption class="p-2 p-lg-3">Pufferfish</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih6.png" alt="fih6">
-                    <figcaption class="p-2 p-lg-3">Stingray</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih7.png" alt="fih7">
-                    <figcaption class="p-2 p-lg-3">Basking shark</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih8.png" alt="fih8">
-                    <figcaption class="p-2 p-lg-3">Flying fish</figcaption>
-                </figure>
-                <figure tabindex="0" class="m-0">
-                    <img src="assets/fih/fih9.png" alt="fih9">
-                    <figcaption class="p-2 p-lg-3">Seahorse</figcaption>
-                </figure>
+            <div class="row">
+                <div class="col-12">
+                    <div id="fishCarousel" class="carousel carousel-dark slide" aria-label="Fish gallery">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Hammered shark"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="1" aria-label="Slide 2: Manta ray"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="2" aria-label="Slide 3: Whale shark"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="3" aria-label="Slide 4: Sailfish"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="4" aria-label="Slide 5: Pufferfish"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="5" aria-label="Slide 6: Stingray"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="6" aria-label="Slide 7: Basking shark"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="7" aria-label="Slide 8: Flying fish"></button>
+                            <button type="button" data-bs-target="#fishCarousel" data-bs-slide-to="8" aria-label="Slide 9: Seahorse"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <figure class="carousel-item active mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih1.png" class="object-fit-contain" alt="Hammered shark">
+                                </div>
+                                <figcaption class="text-center pb-5">Hammered shark</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih2.png" class="object-fit-contain" alt="Manta ray">
+                                </div>
+                                <figcaption class="text-center pb-5">Manta ray</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih3.png" class="object-fit-contain" alt="Whale shark">
+                                </div>
+                                <figcaption class="text-center pb-5">Whale shark</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih4.png" class="object-fit-contain" alt="Sailfish">
+                                </div>
+                                <figcaption class="text-center pb-5">Sailfish</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih5.png" class="object-fit-contain" alt="Pufferfish">
+                                </div>
+                                <figcaption class="text-center pb-5">Pufferfish</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih6.png" class="object-fit-contain" alt="Stingray">
+                                </div>
+                                <figcaption class="text-center pb-5">Stingray</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih7.png" class="object-fit-contain" alt="Basking shark">
+                                </div>
+                                <figcaption class="text-center pb-5">Basking shark</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih8.png" class="object-fit-contain" alt="Flying fish">
+                                </div>
+                                <figcaption class="text-center pb-5">Flying fish</figcaption>
+                            </figure>
+                            <figure class="carousel-item mb-0">
+                                <div class="ratio ratio-4x3">
+                                    <img src="assets/fih/fih9.png" class="object-fit-contain" alt="Seahorse">
+                                </div>
+                                <figcaption class="text-center pb-5">Seahorse</figcaption>
+                            </figure>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#fishCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#fishCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+    </div>
+    </div>
     <footer class="mt-0 py-4 px-3 px-lg-5">
         <p class="my-1">Bekzhan Duzeldikov &amp; Didar Marat</p>
         <p class="my-1">Contact us at: <a href="contacts.html">this page</a></p>
