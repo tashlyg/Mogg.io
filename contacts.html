@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-layout m-0 gap-4">
+<body class="m-0">
 
     <header class="site-header">
     <nav class="navbar navbar-expand-lg bg-dark site-nav" data-bs-theme="dark" aria-label="Main navigation">
@@ -29,6 +29,9 @@
         </div>
     </nav>
     </header>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-12 col-lg-2">
     <aside class="sidebar ms-3 p-3">
         <h2>Explore Mogg.io</h2>
         <p class="my-2">Meet the team and build your daily routine.</p>
@@ -40,7 +43,8 @@
             <a href="gallery.html">Image gallery</a>
         </nav>
     </aside>
-    <main class="page-main">
+    </div>
+    <main class="col-12 col-lg-10">
 
   <header id="main-header" class="container pt-3 pt-lg-4 pb-3 px-3 px-lg-5">
     <h1>Contact Us</h1>
@@ -59,34 +63,60 @@
     </div>
 
     <div class="card p-3 p-lg-4 my-3 my-lg-4">
-      <form id="contact-form" class="gap-3">
-        <div>
-          <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name" placeholder="Name" class="p-2">
+      <form id="contact-form" class="row g-3">
+        <div class="col-12 col-md-6">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Name" class="form-control">
         </div>
 
-        <div>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" placeholder="example@mail.com" class="p-2">
+        <div class="col-12 col-md-6">
+          <label for="email" class="form-label">Email:</label>
+          <div class="input-group">
+            <span class="input-group-text" aria-hidden="true">@</span>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" class="form-control">
+          </div>
         </div>
 
-        <div>
-          <label for="favcolor">Pick a favorite color:</label><br>
-          <input type="color" id="favcolor" name="favcolor" value="#ff6b35" class="p-2">
+        <div class="col-12">
+          <label for="favcolor" class="form-label">Pick a favorite color:</label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff6b35" class="form-control form-control-color">
         </div>
 
-        <div>
-          <label for="message">Message:</label><br>
-          <textarea id="message" name="message" rows="4" placeholder="Write about yourself" class="p-2"></textarea>
+        <fieldset class="col-12">
+          <legend class="form-label fs-6">Message type:</legend>
+          <div class="form-check">
+            <input type="radio" id="general" name="message-type" value="general" class="form-check-input" checked>
+            <label for="general" class="form-check-label">General question</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="feedback" name="message-type" value="feedback" class="form-check-input">
+            <label for="feedback" class="form-check-label">Feedback</label>
+          </div>
+        </fieldset>
+
+        <div class="col-12">
+          <label for="message" class="form-label">Message:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write about yourself" class="form-control"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-lg align-self-sm-start">Send</button>
+        <div class="col-12">
+          <div class="form-check">
+            <input type="checkbox" id="reply" name="reply" value="yes" class="form-check-input">
+            <label for="reply" class="form-check-label">I'd like a reply</label>
+          </div>
+        </div>
+
+        <div class="col-12 d-grid d-sm-block">
+          <button type="submit" class="btn btn-primary btn-lg">Send</button>
+        </div>
       </form>
     </div>
 
     <a href="index.html">&larr; Back to main page</a>
   </div>
     </main>
+    </div>
+    </div>
     <footer class="mt-0 py-4 px-3 px-lg-5">
     <p class="my-1">Bekzhan Duzeldikov &amp; Didar Marat</p>
   </footer>

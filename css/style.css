@@ -57,12 +57,6 @@ th {
   color: #fff;
 }
 
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-}
-
 .site-nav {
   --bs-dark-rgb: 47, 62, 70;
 }
@@ -131,24 +125,6 @@ footer {
 
 .hobby-table td {
   color: var(--color-text);
-}
-
-#contact-form label {
-  font-weight: 600;
-}
-
-#contact-form input,
-#contact-form textarea {
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
 }
 
 footer a {
@@ -228,8 +204,6 @@ footer a {
 /* Mobile */
 @media screen {
   body,
-  #contact-form input,
-  #contact-form textarea,
   button {
     font-size: 14px;
   }
@@ -238,8 +212,6 @@ footer a {
 /* Tablet */
 @media screen and (min-width: 768px) {
   body,
-  #contact-form input,
-  #contact-form textarea,
   button {
     font-size: 16px;
   }
@@ -248,8 +220,6 @@ footer a {
 /* Desktop */
 @media screen and (min-width: 1024px) {
   body,
-  #contact-form input,
-  #contact-form textarea,
   button {
     font-size: 18px;
   }
