@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aMOGG Us</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-layout">
+<body>
     <header class="site-header">
     <nav class="site-nav" aria-label="Main navigation">
         <img src="assets/mogg_face.png" alt="Mogg.io logo">
@@ -17,6 +17,9 @@
         <a href="contacts.html">Contact</a>
     </nav>
     </header>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-12 col-lg-2">
     <aside class="sidebar">
         <h2>Explore Mogg.io</h2>
         <p>Meet the team and build your daily routine.</p>
@@ -28,24 +31,32 @@
             <a href="gallery.html">Image gallery</a>
         </nav>
     </aside>
-    <main class="page-main">
+    </div>
+    <main class="col-sm-12 col-lg-10">
     <header id="main-header" class="container">
         <h1>MOGG or BE MOGGED</h1>
         <p>In this course you will learn how to mogg any person in your environment</p>
     </header>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/IDWF3qMcliQ?si=feBcY4ClZpJDgCLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
     <div class="container">
 
+    <section class="row align-items-center">
+    <div class="col-sm-12 col-lg-6">
     <div class="card">
         <h2>What Is "Mogging"?</h2>
         <p>"Mogging" is internet slang for standing out through your appearance
             &mdash; grooming, style, posture, and confidence. This page rounds up
             practical, healthy habits rather than gimmicks or extreme routines.</p>
     </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+    <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/IDWF3qMcliQ?si=feBcY4ClZpJDgCLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    </div>
+    </section>
 
-    <div class="card-row">
+    <section class="row card-row">
+    <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
     <div class="card">
         <img src="assets/skincare.png" alt="">
         <h3>Skincare Basics</h3>
@@ -57,7 +68,9 @@
         </ul>
         <a class="btn" href="contacts.html">Ask about skincare</a>
     </div>
+    </div>
 
+    <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
     <div class="card">
         <img src="assets/grooming.png" alt="">
         <h3>Grooming &amp; Style</h3>
@@ -69,7 +82,9 @@
         </ul>
         <a class="btn" href="contacts.html">Ask about grooming</a>
     </div>
+    </div>
 
+    <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
     <div class="card">
         <img src="assets/posture.png" alt="">
         <h3>Posture &amp; Fitness</h3>
@@ -82,6 +97,7 @@
         <a class="btn" href="contacts.html">Ask about fitness</a>
     </div>
     </div>
+    </section>
 
     <div class="card">
         <h3>Confidence Matters Most</h3>
@@ -125,6 +141,8 @@
 
 </div>
     </main>
+    </div>
+    </div>
     <footer>
         <p>Bekzhan Duzeldikov &amp; Didar Marat</p>
         <p>Contact us at: <a href="contacts.html">this page</a></p>
