@@ -9,12 +9,23 @@
 </head>
 <body class="page-layout m-0 gap-4">
     <header class="site-header">
-        <nav class="site-nav py-2 px-3 gap-2" aria-label="Main navigation">
-            <img src="assets/mogg_face.png" alt="Mogg.io logo">
-            <a href="index.html" class="py-3 px-3 px-lg-5">Home</a>
-            <a href="about1.html" class="py-3 px-3 px-lg-5">About Bekzhan</a>
-            <a href="about2.html" class="py-3 px-3 px-lg-5">About Didar</a>
-            <a href="contacts.html" class="py-3 px-3 px-lg-5">Contact</a>
+        <nav class="navbar navbar-expand-lg bg-dark site-nav" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/mogg_face.png" alt="Mogg.io logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-5">Home</a>
+                        <a href="about1.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-5">About Bekzhan</a>
+                        <a href="about2.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-5">About Didar</a>
+                        <a href="contacts.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-5">Contact</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <aside class="sidebar ms-3 p-3">

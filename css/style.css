@@ -64,11 +64,7 @@ th {
 }
 
 .site-nav {
-  background-color: var(--color-primary);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  --bs-dark-rgb: 47, 62, 70;
 }
 
 .card {
@@ -140,14 +136,11 @@ footer {
 }
 
 /*Descendant selectors*/
-.site-nav a {
-  color: #fff;
-  font-weight: 600;
-  border-radius: 6px;
+.site-nav .nav-link {
   transition: background 0.2s ease;
 }
 
-.site-nav a:hover {
+.site-nav .nav-link:hover {
   background-color: var(--color-accent);
   color: #fff;
   text-decoration: none;
