@@ -308,3 +308,33 @@ footer a {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
+
+/* Mobile */
+@media screen {
+  body,
+  #contact-form input,
+  #contact-form textarea,
+  button {
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  body,
+  #contact-form input,
+  #contact-form textarea,
+  button {
+    font-size: 16px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  body,
+  #contact-form input,
+  #contact-form textarea,
+  button {
+    font-size: 18px;
+  }
+}
