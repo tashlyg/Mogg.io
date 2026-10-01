@@ -88,12 +88,6 @@ th {
   object-fit: contain;
 }
 
-.card-row .btn {
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-}
-
 .card-row .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -113,19 +107,6 @@ th {
 
 .hobby-table tr:nth-child(even) {
   background-color: #f4f2ee;
-}
-
-.btn {
-  background-color: var(--color-accent);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: var(--color-primary);
 }
 
 footer {
