@@ -75,10 +75,7 @@ th {
 }
 
 .card-row .card {
-  flex: 1;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
