@@ -6,19 +6,6 @@ const form = document.getElementById("contact-form");
 if (form) {
     form.noValidate = true;
 
-    if (!document.getElementById("password")) {
-        form.querySelector("button[type='submit']").parentElement.insertAdjacentHTML("beforebegin", `
-            <div class="col-12 col-md-6">
-                <label for="password" class="form-label">Password (8-32 characters):</label>
-                <input type="password" id="password" class="form-control" autocomplete="new-password" required>
-            </div>
-            <div class="col-12 col-md-6">
-                <label for="confirm-password" class="form-label">Confirm password:</label>
-                <input type="password" id="confirm-password" class="form-control" autocomplete="new-password" required>
-            </div>
-        `);
-    }
-
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -59,6 +46,23 @@ document.querySelectorAll(".section-toggle").forEach(function (button) {
         button.setAttribute("aria-expanded", "false");
     });
 });
+
+// task 3
+
+const popupElement = document.getElementById("contact-popup");
+
+if (popupElement) {
+    const popup = new bootstrap.Modal(popupElement);
+    const openButton = document.getElementById("open-contact");
+
+    openButton.addEventListener("click", function () {
+        popup.show();
+    });
+
+    popupElement.addEventListener("hidden.bs.modal", function () {
+        openButton.focus();
+    });
+}
 
 // task 4
 
