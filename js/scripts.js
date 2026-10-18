@@ -44,6 +44,22 @@ if (form) {
     });
 }
 
+// task 2: Toggle content sections with Bootstrap's slide animation.
+document.querySelectorAll(".section-toggle").forEach(function (button) {
+    const content = document.getElementById(button.getAttribute("aria-controls"));
+    const collapse = new bootstrap.Collapse(content, { toggle: false });
+
+    button.addEventListener("click", function () {
+        collapse.toggle();
+    });
+    content.addEventListener("show.bs.collapse", function () {
+        button.setAttribute("aria-expanded", "true");
+    });
+    content.addEventListener("hide.bs.collapse", function () {
+        button.setAttribute("aria-expanded", "false");
+    });
+});
+
 // task 4
 
 const colors = ["#c1fdff", "#ffe4d6", "#e2f0cb"];
