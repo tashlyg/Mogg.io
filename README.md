@@ -31,6 +31,10 @@ Mogg.io/
 ├── gallery.html
 ├── css/
 │   └── style.css
+├── js/
+│   ├── scripts.js
+│   ├── assignment5.js
+│   └── challenges.js
 ├── assets/
 │   ├── beka.jpg
 │   ├── fish.png
@@ -83,10 +87,11 @@ backend or email service.
 An internet connection is needed to load Bootstrap from the CDN and the embedded
 YouTube video.
 
-## Assignment 5 (tasks 1, 2, and 3 only)
+## Assignment 5 (tasks 1-5)
 
-New examples use plain JavaScript in `js/assignment5.js` and continue the existing
-website. Earlier assignment features remain in `js/scripts.js`.
+Examples use plain JavaScript in `js/assignment5.js` and `js/challenges.js` and
+continue the existing website. Earlier assignment features remain in
+`js/scripts.js`.
 
 ### Task 1: DOM manipulation and styling
 
@@ -133,6 +138,40 @@ Open **Daily Basics** on `index.html`.
 - The sound file is `assets/routine-complete.wav`; it needs no external service.
   Reduced-motion settings disable the movement.
 
+### Task 4: Structure and separation of concerns
+
+- HTML files contain page structure and accessible controls, `css/style.css`
+  contains presentation, and external JavaScript files contain behavior.
+  The contact icon's inline dimensions were moved into the `contact-icon` class.
+- `js/assignment5.js` uses separate named initialization functions for read-more,
+  ratings, check-in time, menu navigation, the planner, and the daily routine.
+  Each function keeps its variables local and skips pages without that feature.
+- Repeated state changes are handled by functions such as `showStep` and
+  `updateChallenge`. Meaningful variable names and short comments explain logic.
+- For the defense: scripts load after the HTML, so the controls already exist
+  when initialization runs. Event listeners connect controls to behavior without
+  inline event handlers. Task 1 still demonstrates JavaScript's `style` API;
+  those dynamic changes live in the external script, not in HTML attributes.
+
+### Task 5: Creativity and engagement
+
+Open **Daily Mogg Challenge** on `index.html`.
+
+- Complete three small habits based on grooming, movement, and confidence.
+  Click a habit card or use Tab and Space to check it off.
+- **Pick my next habit** suggests an unfinished habit, highlights its card,
+  and focuses its checkbox. It avoids the previous suggestion when possible.
+- The progress bar, count, and encouragement update together. Completing all
+  three earns the **Daily Mogg Champion!** badge with a short animation.
+- Uncheck a habit to undo it or use **Start fresh** to reset the challenge.
+  Progress lasts for the current page visit. The layout stacks on small screens,
+  status updates are announced to screen readers, and reduced-motion settings
+  disable the celebration animation.
+- For the defense: `js/challenges.js` keeps checkbox state as the source of truth.
+  `filter` counts completed habits and finds suggestions; `Math.random` picks a
+  suggestion. `updateChallenge` synchronizes progress, messages, button states,
+  and CSS classes. Task 3 supplies the separate sound interaction.
+
 ### Quick defense demo
 
 1. Show and hide the extra advice, then select a high and a low star rating.
@@ -140,6 +179,10 @@ Open **Daily Basics** on `index.html`.
    Focus a top navigation link and demonstrate arrow-key navigation.
 3. Explain the habit object, loop, and callback. Complete and restart the routine
    to demonstrate the sound and transition.
+4. Show the separate HTML, CSS, and JavaScript files and the named initialization
+   functions. Point out the contact icon class and the absence of inline handlers.
+5. Ask for a suggested challenge habit, complete all three, undo one, and reset.
+   Demonstrate the checkboxes with the keyboard and the layout on a narrow screen.
 
 ## Live Site
 

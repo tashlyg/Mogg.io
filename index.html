@@ -126,6 +126,43 @@
         <audio id="routine-sound" src="assets/routine-complete.wav" preload="none"></audio>
     </section>
 
+    <!-- Assignment 5, task 5: a themed challenge with progress and encouragement. -->
+    <section id="daily-challenge" class="card challenge-board p-3 p-lg-4 my-3 my-lg-4" aria-labelledby="challenge-title">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+            <h2 id="challenge-title" class="mb-0">Daily Mogg Challenge</h2>
+            <span id="challenge-badge" class="challenge-badge">Small steps, big energy</span>
+        </div>
+        <p>Take care of yourself, then check off each habit. Need a starting point? Let us pick one for you.</p>
+        <fieldset>
+            <legend class="fs-5">Your three habits</legend>
+            <div class="challenge-options">
+                <label class="challenge-option" for="challenge-grooming">
+                    <input type="checkbox" id="challenge-grooming" name="daily-habit" value="Freshen up">
+                    <img src="assets/grooming.png" alt="" width="64" height="64">
+                    <span><strong>Freshen up</strong><span class="d-block">Tidy your hair and choose an outfit you feel good in.</span></span>
+                </label>
+                <label class="challenge-option" for="challenge-movement">
+                    <input type="checkbox" id="challenge-movement" name="daily-habit" value="Take a movement break">
+                    <img src="assets/posture.png" alt="" width="64" height="64">
+                    <span><strong>Take a movement break</strong><span class="d-block">Step away from your screen and move in a way that feels comfortable.</span></span>
+                </label>
+                <label class="challenge-option" for="challenge-confidence">
+                    <input type="checkbox" id="challenge-confidence" name="daily-habit" value="Share some confidence">
+                    <img src="assets/mogg_face.png" alt="" width="64" height="64">
+                    <span><strong>Share some confidence</strong><span class="d-block">Give someone a kind, sincere compliment.</span></span>
+                </label>
+            </div>
+        </fieldset>
+        <label for="challenge-progress" class="fw-semibold mt-3">Challenge progress</label>
+        <progress id="challenge-progress" class="challenge-progress" value="0" max="3">0 of 3 complete</progress>
+        <p id="challenge-message" class="my-2" role="status">0 of 3 complete. Pick any habit to begin!</p>
+        <p class="small mb-3">Progress is for this page visit. Uncheck a habit to undo it, or start fresh below.</p>
+        <div class="d-flex flex-wrap gap-2">
+            <button type="button" id="suggest-habit" class="btn btn-primary">Pick my next habit</button>
+            <button type="button" id="reset-challenge" class="btn btn-outline-primary" disabled>Start fresh</button>
+        </div>
+    </section>
+
     <section class="card-group card-row d-block d-lg-flex my-3 my-lg-4">
     <div class="card">
         <img class="card-img-top" src="assets/skincare.png" alt="">
@@ -224,6 +261,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="js/assignment5.js"></script>
+    <script src="js/challenges.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
 // Assignment 5, task 1: select elements and update their content and styles.
-const readMoreButton = document.getElementById("read-more");
+function initializeReadMore() {
+    const readMoreButton = document.getElementById("read-more");
+    if (!readMoreButton) return;
 
-if (readMoreButton) {
     const extraContent = document.getElementById("routine-more");
 
     readMoreButton.addEventListener("click", function () {
@@ -13,61 +14,71 @@ if (readMoreButton) {
     });
 }
 
-const ratingStars = document.querySelectorAll(".rating-stars button");
+function initializeRating() {
+    const ratingStars = document.querySelectorAll(".rating-stars button");
+    const ratingMessage = document.getElementById("rating-message");
 
-ratingStars.forEach(function (star) {
-    star.addEventListener("click", function () {
-        const rating = Number(star.value);
+    ratingStars.forEach(function (star) {
+        star.addEventListener("click", function () {
+            const rating = Number(star.value);
 
-        ratingStars.forEach(function (button) {
-            button.style.color = Number(button.value) <= rating ? "#a6370e" : "#687078";
-            button.setAttribute("aria-pressed", String(button === star));
+            ratingStars.forEach(function (button) {
+                button.style.color = Number(button.value) <= rating ? "#a6370e" : "#687078";
+                button.setAttribute("aria-pressed", String(button === star));
+            });
+
+            ratingMessage.textContent = "Your rating: " + rating + " out of 5. Thank you!";
         });
-
-        document.getElementById("rating-message").textContent = "Your rating: " + rating + " out of 5. Thank you!";
-    });
-});
-
-// Task 2: button events, keyboard events, callbacks, and a switch statement.
-const timeButton = document.getElementById("show-time");
-
-if (timeButton) {
-    timeButton.addEventListener("click", function () {
-        document.getElementById("check-in-time").textContent = "Your check-in time: " + new Date().toLocaleTimeString();
     });
 }
 
-const menuLinks = document.querySelectorAll(".site-nav .nav-link");
+// Task 2: button events, keyboard events, callbacks, and a switch statement.
+function initializeCheckInTime() {
+    const timeButton = document.getElementById("show-time");
+    if (!timeButton) return;
 
-menuLinks.forEach(function (link, index) {
-    link.addEventListener("keydown", function (event) {
-        let nextIndex = index;
+    const checkInTime = document.getElementById("check-in-time");
 
-        switch (event.key) {
-            case "ArrowRight":
-            case "ArrowDown":
-                nextIndex = (index + 1) % menuLinks.length;
-                break;
-            case "ArrowLeft":
-            case "ArrowUp":
-                nextIndex = (index - 1 + menuLinks.length) % menuLinks.length;
-                break;
-            default:
-                return;
-        }
-
-        event.preventDefault();
-        menuLinks[nextIndex].focus();
+    timeButton.addEventListener("click", function () {
+        checkInTime.textContent = "Your check-in time: " + new Date().toLocaleTimeString();
     });
-});
+}
 
-const planner = document.getElementById("routine-planner");
+function initializeKeyboardNavigation() {
+    const menuLinks = document.querySelectorAll(".site-nav .nav-link");
 
-if (planner) {
-    const steps = document.querySelectorAll(".planner-step");
+    menuLinks.forEach(function (link, index) {
+        link.addEventListener("keydown", function (event) {
+            let nextIndex = index;
+
+            switch (event.key) {
+                case "ArrowRight":
+                case "ArrowDown":
+                    nextIndex = (index + 1) % menuLinks.length;
+                    break;
+                case "ArrowLeft":
+                case "ArrowUp":
+                    nextIndex = (index - 1 + menuLinks.length) % menuLinks.length;
+                    break;
+                default:
+                    return;
+            }
+
+            event.preventDefault();
+            menuLinks[nextIndex].focus();
+        });
+    });
+}
+
+function initializeRoutinePlanner() {
+    const planner = document.getElementById("routine-planner");
+    if (!planner) return;
+
+    const steps = planner.querySelectorAll(".planner-step");
     const routineName = document.getElementById("routine-name");
     const routineFocus = document.getElementById("routine-focus");
-    const result = document.getElementById("planner-result");
+    const plannerResult = document.getElementById("planner-result");
+    const plannerProgress = document.getElementById("planner-progress");
     let currentStep = 0;
 
     function showStep(stepNumber) {
@@ -75,7 +86,7 @@ if (planner) {
         steps.forEach(function (step, index) {
             step.hidden = index !== currentStep;
         });
-        document.getElementById("planner-progress").textContent = "Step " + (currentStep + 1) + " of 2";
+        plannerProgress.textContent = "Step " + (currentStep + 1) + " of " + steps.length;
         steps[currentStep].querySelector("input, select").focus();
     }
 
@@ -100,39 +111,48 @@ if (planner) {
             return;
         }
 
-        result.textContent = routineName.value + ", your focus is " + routineFocus.value + ". Your plan is ready for this visit!";
+        // The form uses novalidate because the name field can be in a hidden step.
+        routineName.value = routineName.value.trim();
+        if (!routineName.checkValidity()) {
+            showStep(0);
+            routineName.reportValidity();
+            return;
+        }
+
+        plannerResult.textContent = routineName.value + ", your focus is " + routineFocus.value + ". Your plan is ready for this visit!";
     });
 
     planner.addEventListener("input", function () {
-        result.textContent = "";
+        plannerResult.textContent = "";
     });
 }
 
 // Task 3: keep related data and a method in one object.
-const dailyRoutine = {
-    title: "Daily basics",
-    habits: [
-        { name: "Wash your face", minutes: 2 },
-        { name: "Tidy your hair", minutes: 3 },
-        { name: "Take a short walk", minutes: 10 }
-    ],
-    getTotalMinutes: function () {
-        let total = 0;
-        for (let i = 0; i < this.habits.length; i++) {
-            total += this.habits[i].minutes;
+function initializeDailyRoutine() {
+    const habitList = document.getElementById("habit-list");
+    if (!habitList) return;
+
+    const dailyRoutine = {
+        title: "Daily basics",
+        habits: [
+            { name: "Wash your face", minutes: 2 },
+            { name: "Tidy your hair", minutes: 3 },
+            { name: "Take a short walk", minutes: 10 }
+        ],
+        getTotalMinutes: function () {
+            let totalMinutes = 0;
+            for (let index = 0; index < this.habits.length; index++) {
+                totalMinutes += this.habits[index].minutes;
+            }
+            return totalMinutes;
         }
-        return total;
-    }
-};
+    };
 
-const habitList = document.getElementById("habit-list");
-
-if (habitList) {
     // forEach is a higher-order function: it receives a callback function.
     dailyRoutine.habits.forEach(function (habit) {
-        const item = document.createElement("li");
-        item.textContent = habit.name + " - " + habit.minutes + " minutes";
-        habitList.appendChild(item);
+        const habitItem = document.createElement("li");
+        habitItem.textContent = habit.name + " - " + habit.minutes + " minutes";
+        habitList.appendChild(habitItem);
     });
 
     document.getElementById("routine-summary").textContent = dailyRoutine.title + ": " + dailyRoutine.habits.length + " habits, " + dailyRoutine.getTotalMinutes() + " minutes in total.";
@@ -140,7 +160,7 @@ if (habitList) {
     const routineCard = document.getElementById("routine-demo");
     const completeButton = document.getElementById("complete-routine");
     const completionMessage = document.getElementById("completion-message");
-    const sound = document.getElementById("routine-sound");
+    const routineSound = document.getElementById("routine-sound");
 
     completeButton.addEventListener("click", function () {
         const isComplete = routineCard.classList.toggle("is-complete");
@@ -149,10 +169,10 @@ if (habitList) {
         completionMessage.textContent = isComplete ? "Well done! Your daily routine is complete." : "Ready for your next routine.";
 
         // Reuse one sound and rewind it so repeated clicks cannot overlap audio.
-        sound.pause();
-        sound.currentTime = 0;
+        routineSound.pause();
+        routineSound.currentTime = 0;
         if (isComplete) {
-            sound.play().catch(function (error) {
+            routineSound.play().catch(function (error) {
                 // Resetting the routine can cancel a sound that is still loading.
                 if (error.name !== "AbortError") {
                     completionMessage.textContent = "Well done! Sound is unavailable in this browser.";
@@ -161,3 +181,12 @@ if (habitList) {
         }
     });
 }
+
+// Task 4: initialize each feature separately and keep its state inside its function.
+// This shared script runs after the HTML on every page; absent features are skipped.
+initializeReadMore();
+initializeRating();
+initializeCheckInTime();
+initializeKeyboardNavigation();
+initializeRoutinePlanner();
+initializeDailyRoutine();
