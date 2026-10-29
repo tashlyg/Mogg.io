@@ -214,6 +214,20 @@ footer a:focus-visible {
   outline-offset: 3px;
 }
 
+/* Assignment 5, task 1 */
+.extra-content {
+  display: none;
+}
+
+.rating-stars button {
+  background: transparent;
+  border: 0;
+  color: #687078;
+  font-size: 2rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
 /* Mobile */
 @media screen {
   body,

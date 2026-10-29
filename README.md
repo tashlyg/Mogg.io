@@ -83,6 +83,22 @@ backend or email service.
 An internet connection is needed to load Bootstrap from the CDN and the embedded
 YouTube video.
 
+## Assignment 5 (tasks 1, 2, and 3 only)
+
+New examples use plain JavaScript in `js/assignment5.js` and continue the existing
+website. Earlier assignment features remain in `js/scripts.js`.
+
+### Task 1: DOM manipulation and styling
+
+Open `index.html` and find **Build Your Daily Routine**.
+
+- **Read more** shows extra advice; **Read less** hides it again.
+- Click a star to select a rating and update the message below it.
+- For the defense: `getElementById` selects one element, while `querySelectorAll`
+  selects all five stars. `textContent` changes text, `style.display` shows or
+  hides advice, and `style.color` colors the stars. `setAttribute` updates
+  `aria-expanded` and `aria-pressed` so the controls describe their current state.
+
 ## Live Site
 
 Hosted via GitHub Pages: _https://tashlyg.github.io/Mogg.io/_
