@@ -86,6 +86,35 @@
         </fieldset>
     </section>
 
+    <!-- Assignment 5, task 2: click events and a two-step form. -->
+    <section class="card p-3 p-lg-4 my-3 my-lg-4" aria-labelledby="planner-title">
+        <h2 id="planner-title">Plan Your Routine</h2>
+        <button type="button" id="show-time" class="btn btn-outline-primary align-self-start">Show current time</button>
+        <p id="check-in-time" class="my-2" aria-live="polite">Ready for a daily check-in?</p>
+
+        <form id="routine-planner" novalidate>
+            <p id="planner-progress" class="fw-semibold" aria-live="polite">Step 1 of 2</p>
+            <fieldset class="planner-step">
+                <legend class="fs-5">Introduce yourself</legend>
+                <label for="routine-name" class="form-label">Your name</label>
+                <input type="text" id="routine-name" name="routine-name" class="form-control mb-3" autocomplete="given-name" maxlength="40" required>
+                <button type="button" id="planner-next" class="btn btn-primary">Next</button>
+            </fieldset>
+            <fieldset class="planner-step" hidden>
+                <legend class="fs-5">Choose your focus</legend>
+                <label for="routine-focus" class="form-label">What would you like to work on?</label>
+                <select id="routine-focus" name="routine-focus" class="form-select mb-3">
+                    <option value="skincare">Skincare</option>
+                    <option value="grooming">Grooming</option>
+                    <option value="fitness">Fitness</option>
+                </select>
+                <button type="button" id="planner-back" class="btn btn-outline-primary">Back</button>
+                <button type="submit" class="btn btn-primary">Save my plan</button>
+            </fieldset>
+            <p id="planner-result" class="mt-3 mb-0" role="status"></p>
+        </form>
+    </section>
+
     <section class="card-group card-row d-block d-lg-flex my-3 my-lg-4">
     <div class="card">
         <img class="card-img-top" src="assets/skincare.png" alt="">

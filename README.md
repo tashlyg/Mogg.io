@@ -99,6 +99,24 @@ Open `index.html` and find **Build Your Daily Routine**.
   hides advice, and `style.color` colors the stars. `setAttribute` updates
   `aria-expanded` and `aria-pressed` so the controls describe their current state.
 
+### Task 2: Event handling
+
+Open **Plan Your Routine** on `index.html`.
+
+- Click **Show current time** to display the time at that click.
+- Enter your name, click **Next**, and choose a focus. **Back** returns to the
+  first step without clearing either input. **Save my plan** displays a summary
+  without reloading the page. The plan lasts for the current page visit.
+- Focus a link in the top navigation on any page, then use the arrow keys to
+  move between links. Navigation wraps from the last link to the first and back.
+  On mobile, open the hamburger menu first.
+- For the defense: `addEventListener` registers callbacks. `goToNextStep` is a
+  named callback that validates the name and calls `showStep`. The `currentStep`
+  variable tracks progress, and `hidden` changes the visible step without
+  deleting its inputs. `preventDefault` stops form submission from reloading
+  the page. The keyboard handler uses `switch (event.key)` to choose a direction,
+  then `focus()` moves to that link. `%` wraps the link index.
+
 ## Live Site
 
 Hosted via GitHub Pages: _https://tashlyg.github.io/Mogg.io/_

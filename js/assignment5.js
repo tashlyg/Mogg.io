@@ -27,3 +27,83 @@ ratingStars.forEach(function (star) {
         document.getElementById("rating-message").textContent = "Your rating: " + rating + " out of 5. Thank you!";
     });
 });
+
+// Task 2: button events, keyboard events, callbacks, and a switch statement.
+const timeButton = document.getElementById("show-time");
+
+if (timeButton) {
+    timeButton.addEventListener("click", function () {
+        document.getElementById("check-in-time").textContent = "Your check-in time: " + new Date().toLocaleTimeString();
+    });
+}
+
+const menuLinks = document.querySelectorAll(".site-nav .nav-link");
+
+menuLinks.forEach(function (link, index) {
+    link.addEventListener("keydown", function (event) {
+        let nextIndex = index;
+
+        switch (event.key) {
+            case "ArrowRight":
+            case "ArrowDown":
+                nextIndex = (index + 1) % menuLinks.length;
+                break;
+            case "ArrowLeft":
+            case "ArrowUp":
+                nextIndex = (index - 1 + menuLinks.length) % menuLinks.length;
+                break;
+            default:
+                return;
+        }
+
+        event.preventDefault();
+        menuLinks[nextIndex].focus();
+    });
+});
+
+const planner = document.getElementById("routine-planner");
+
+if (planner) {
+    const steps = document.querySelectorAll(".planner-step");
+    const routineName = document.getElementById("routine-name");
+    const routineFocus = document.getElementById("routine-focus");
+    const result = document.getElementById("planner-result");
+    let currentStep = 0;
+
+    function showStep(stepNumber) {
+        currentStep = stepNumber;
+        steps.forEach(function (step, index) {
+            step.hidden = index !== currentStep;
+        });
+        document.getElementById("planner-progress").textContent = "Step " + (currentStep + 1) + " of 2";
+        steps[currentStep].querySelector("input, select").focus();
+    }
+
+    function goToNextStep() {
+        routineName.value = routineName.value.trim();
+        if (routineName.reportValidity()) {
+            showStep(1);
+        }
+    }
+
+    // Passing a function to addEventListener makes it an event callback.
+    document.getElementById("planner-next").addEventListener("click", goToNextStep);
+    document.getElementById("planner-back").addEventListener("click", function () {
+        showStep(0);
+    });
+
+    planner.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (currentStep === 0) {
+            goToNextStep();
+            return;
+        }
+
+        result.textContent = routineName.value + ", your focus is " + routineFocus.value + ". Your plan is ready for this visit!";
+    });
+
+    planner.addEventListener("input", function () {
+        result.textContent = "";
+    });
+}
