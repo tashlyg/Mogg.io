@@ -228,6 +228,26 @@ footer a:focus-visible {
   cursor: pointer;
 }
 
+/* Assignment 5, task 3: the button adds or removes is-complete. */
+.routine-demo {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.routine-demo.is-complete {
+  background-color: #e2f0cb;
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .routine-demo {
+    transition: none;
+  }
+
+  .routine-demo.is-complete {
+    transform: none;
+  }
+}
+
 /* Mobile */
 @media screen {
   body,

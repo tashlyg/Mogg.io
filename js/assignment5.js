@@ -107,3 +107,57 @@ if (planner) {
         result.textContent = "";
     });
 }
+
+// Task 3: keep related data and a method in one object.
+const dailyRoutine = {
+    title: "Daily basics",
+    habits: [
+        { name: "Wash your face", minutes: 2 },
+        { name: "Tidy your hair", minutes: 3 },
+        { name: "Take a short walk", minutes: 10 }
+    ],
+    getTotalMinutes: function () {
+        let total = 0;
+        for (let i = 0; i < this.habits.length; i++) {
+            total += this.habits[i].minutes;
+        }
+        return total;
+    }
+};
+
+const habitList = document.getElementById("habit-list");
+
+if (habitList) {
+    // forEach is a higher-order function: it receives a callback function.
+    dailyRoutine.habits.forEach(function (habit) {
+        const item = document.createElement("li");
+        item.textContent = habit.name + " - " + habit.minutes + " minutes";
+        habitList.appendChild(item);
+    });
+
+    document.getElementById("routine-summary").textContent = dailyRoutine.title + ": " + dailyRoutine.habits.length + " habits, " + dailyRoutine.getTotalMinutes() + " minutes in total.";
+
+    const routineCard = document.getElementById("routine-demo");
+    const completeButton = document.getElementById("complete-routine");
+    const completionMessage = document.getElementById("completion-message");
+    const sound = document.getElementById("routine-sound");
+
+    completeButton.addEventListener("click", function () {
+        const isComplete = routineCard.classList.toggle("is-complete");
+        completeButton.textContent = isComplete ? "Start again" : "Mark routine done";
+        completeButton.setAttribute("aria-pressed", String(isComplete));
+        completionMessage.textContent = isComplete ? "Well done! Your daily routine is complete." : "Ready for your next routine.";
+
+        // Reuse one sound and rewind it so repeated clicks cannot overlap audio.
+        sound.pause();
+        sound.currentTime = 0;
+        if (isComplete) {
+            sound.play().catch(function (error) {
+                // Resetting the routine can cancel a sound that is still loading.
+                if (error.name !== "AbortError") {
+                    completionMessage.textContent = "Well done! Sound is unavailable in this browser.";
+                }
+            });
+        }
+    });
+}

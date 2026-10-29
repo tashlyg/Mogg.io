@@ -117,6 +117,30 @@ Open **Plan Your Routine** on `index.html`.
   the page. The keyboard handler uses `switch (event.key)` to choose a direction,
   then `focus()` moves to that link. `%` wraps the link index.
 
+### Task 3: JavaScript advanced concepts
+
+Open **Daily Basics** on `index.html`.
+
+- The habit list and its 15-minute total are created from JavaScript data.
+- **Mark routine done** plays a short local sound, moves the card upward, and
+  changes its color. **Start again** stops the sound and resets the card.
+- For the defense: `dailyRoutine` is an object with a `title`, a `habits` array,
+  and the `getTotalMinutes` method. `this` refers to that object. A `for` loop
+  adds the minutes. `forEach` is a higher-order function because it accepts a
+  callback; the callback creates each list item with `createElement` and
+  `appendChild`. `classList.toggle` triggers the CSS transition. `play`, `pause`,
+  and `currentTime` control one audio element so sounds do not overlap.
+- The sound file is `assets/routine-complete.wav`; it needs no external service.
+  Reduced-motion settings disable the movement.
+
+### Quick defense demo
+
+1. Show and hide the extra advice, then select a high and a low star rating.
+2. Show the time. Move through the planner and back to show that inputs remain.
+   Focus a top navigation link and demonstrate arrow-key navigation.
+3. Explain the habit object, loop, and callback. Complete and restart the routine
+   to demonstrate the sound and transition.
+
 ## Live Site
 
 Hosted via GitHub Pages: _https://tashlyg.github.io/Mogg.io/_
