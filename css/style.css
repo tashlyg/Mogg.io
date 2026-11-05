@@ -426,6 +426,33 @@ footer a:focus-visible {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Assignment 6, task 8 */
+.copy-action {
+  position: relative;
+  display: inline-block;
+}
+
+.copy-tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 20;
+  width: 14rem;
+  max-width: calc(100vw - 6rem);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.875rem;
+  pointer-events: none;
+}
+
+.clipboard-input {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+}
+
 /* Mobile */
 @media screen {
   body,

@@ -220,6 +220,14 @@ The examples use jQuery in `js/script.js` on `index.html`.
   action replaces the previous message and restarts its timer. A polite live
   region announces feedback without moving focus. Uses `.fadeIn()`, `.fadeOut()`,
   `.stop()`, and `clearTimeout`; reduced-motion settings skip the fades.
+- **Task 8:** **Keep Your Routine Handy** has two snippets with **Copy** buttons.
+  A successful copy changes the icon to a checkmark, displays **Copied!**, and
+  opens a **Copied to clipboard!** tooltip for 2.5 seconds. Escape dismisses the
+  tooltip, and a notification also announces success. Clipboard permission
+  failures show a manual-copy message without claiming success. Uses the
+  Clipboard API with `.on("click")`, `.text()`, and `.prop()`; browsers without
+  that API use a temporary textarea and `execCommand("copy")`, restoring focus
+  and selection afterward. The buttons also work with Tab and Enter or Space.
 
 ## Live Site
 

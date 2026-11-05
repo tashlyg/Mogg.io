@@ -155,4 +155,66 @@ $(document).ready(function () {
             notification.fadeOut(reducedMotion ? 0 : 400);
         }, 3000);
     }
+
+    // Task 8: use the Clipboard API, with a fallback for local-file browsers.
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+        }
+
+        const previousFocus = document.activeElement;
+        const selection = window.getSelection();
+        const ranges = [];
+        for (let index = 0; index < selection.rangeCount; index++) {
+            ranges.push(selection.getRangeAt(index).cloneRange());
+        }
+        const temporaryInput = $("<textarea>").addClass("clipboard-input")
+            .attr({ readonly: true, "aria-label": "Text to copy" }).val(text).appendTo("body");
+        let copied = false;
+        try {
+            temporaryInput[0].select();
+            copied = document.execCommand("copy");
+        } finally {
+            temporaryInput.remove();
+            previousFocus.focus({ preventScroll: true });
+            selection.removeAllRanges();
+            ranges.forEach(function (range) { selection.addRange(range); });
+        }
+        if (!copied) throw new Error("Copy was not permitted.");
+    }
+
+    $(".copy-button").on("click", async function () {
+        const button = $(this);
+        if (button.data("copying")) return;
+        const tooltip = $("#" + button.attr("aria-describedby"));
+        const snippet = $("#" + button.attr("data-copy-target")).text();
+
+        function resetCopyFeedback() {
+            button.find(".copy-icon").text("\u29c9");
+            button.find(".copy-label").text("Copy");
+            tooltip.prop("hidden", true).text("");
+        }
+
+        window.clearTimeout(button.data("copyTimer"));
+        resetCopyFeedback();
+        button.data("copying", true).attr("aria-busy", "true");
+        try {
+            await copyText(snippet);
+            button.find(".copy-icon").text("\u2713");
+            button.find(".copy-label").text("Copied!");
+            tooltip.text("Copied to clipboard!").prop("hidden", false);
+            showNotification("Copied to clipboard!");
+            button.data("copyTimer", window.setTimeout(resetCopyFeedback, 2500));
+        } catch (error) {
+            showNotification("Could not copy. Select the snippet and copy it manually.");
+        } finally {
+            button.data("copying", false).attr("aria-busy", "false");
+        }
+    });
+
+    $(".copy-button").on("keydown", function (event) {
+        if (event.key === "Escape") {
+            $("#" + $(this).attr("aria-describedby")).prop("hidden", true);
+        }
+    });
 });
