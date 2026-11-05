@@ -184,6 +184,13 @@ Open **Daily Mogg Challenge** on `index.html`.
 5. Ask for a suggested challenge habit, complete all three, undo one, and reset.
    Demonstrate the checkboxes with the keyboard and the layout on a narrow screen.
 
+## Assignment 6
+
+The examples use jQuery in `js/script.js` on `index.html`.
+
+- **Task 0:** jQuery 4.0.0 loads from the CDN in the HTML head. The external
+  script uses `$(document).ready()` and prints `jQuery is ready!` in the console.
+
 ## Live Site
 
 Hosted via GitHub Pages: _https://tashlyg.github.io/Mogg.io/_
