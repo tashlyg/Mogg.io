@@ -46,4 +46,35 @@ $(document).ready(function () {
             $("#habit-suggestions").hide();
         }
     });
+
+    // Task 3: highlight every match without replacing buttons or other elements.
+    $("#habit-search").on("input", function () {
+        $("mark.search-match").contents().unwrap();
+        document.body.normalize(); // Join text again after removing old highlights.
+
+        const query = $(this).val().trim();
+        if (query === "") return;
+
+        // Treat symbols such as "." and "(" as text, not regex commands.
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const pattern = new RegExp("(" + escapedQuery + ")", "gi");
+
+        $("body *").not("script, style, textarea, option, .habit-search-box, .habit-search-box *")
+            .contents().filter(function () {
+                return this.nodeType === 3; // Search text nodes only.
+            }).each(function () {
+                const parts = this.textContent.split(pattern);
+                if (parts.length === 1) return;
+
+                const fragment = document.createDocumentFragment();
+                parts.forEach(function (part, index) {
+                    // Captured matches are at odd positions in the split array.
+                    const node = index % 2 === 1
+                        ? $("<mark>").addClass("search-match").text(part)[0]
+                        : document.createTextNode(part);
+                    fragment.appendChild(node);
+                });
+                $(this).replaceWith(fragment);
+            });
+    });
 });

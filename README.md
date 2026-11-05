@@ -197,6 +197,11 @@ The examples use jQuery in `js/script.js` on `index.html`.
 - **Task 2:** the same field offers matching tip names in a dropdown. Select
   one by clicking it or using Tab and Enter. Escape or clicking outside closes
   the dropdown. Empty and unmatched searches show no suggestions.
+- **Task 3:** searching also highlights every matching occurrence in page text,
+  ignoring case. Clear the field to remove the highlights. A regular expression
+  finds matches, and `<mark>` elements wrap them. Only text nodes change, so
+  existing controls keep working. Search symbols are treated literally, and
+  form values, scripts, and the suggestions dropdown are excluded.
 
 ## Live Site
 

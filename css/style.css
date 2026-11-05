@@ -373,6 +373,13 @@ footer a:focus-visible {
   background: #ffe4d6;
 }
 
+/* Assignment 6, task 3 */
+.search-match {
+  background-color: #ffe082;
+  color: #22282b;
+  padding: 0;
+}
+
 /* Mobile */
 @media screen {
   body,
