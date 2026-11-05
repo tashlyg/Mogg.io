@@ -190,6 +190,10 @@ The examples use jQuery in `js/script.js` on `index.html`.
 
 - **Task 0:** jQuery 4.0.0 loads from the CDN in the HTML head. The external
   script uses `$(document).ready()` and prints `jQuery is ready!` in the console.
+- **Task 1:** type in **Find a Daily Habit** to filter six tips immediately.
+  Matching ignores case and extra spaces at the ends. Clear the field to show
+  all tips; an unmatched search displays a message. Uses `.on()`, `.each()`,
+  `.text()`, and `.toggle()`.
 
 ## Live Site
 

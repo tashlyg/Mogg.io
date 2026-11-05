@@ -336,6 +336,11 @@ footer a:focus-visible {
   }
 }
 
+/* Assignment 6, task 1 */
+#no-habits {
+  display: none;
+}
+
 /* Mobile */
 @media screen {
   body,
