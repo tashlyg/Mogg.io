@@ -209,6 +209,12 @@ The examples use jQuery in `js/script.js` on `index.html`.
   and 15 minutes. jQuery `.animate()` updates the numbers over 1.5 seconds when
   the section first enters view. Each counter finishes at its exact target and
   does not restart on later scrolls. Reduced-motion settings skip the animation.
+- **Task 6:** enter a valid email in **Try a Routine Reminder** and click
+  **Submit**. The button shows a spinner and **Please wait...**, then disables
+  itself for a simulated 1.5-second request. It returns to **Submit** afterward,
+  with a completion message. Invalid emails use browser validation; repeated
+  submits during the delay are ignored. This demo never sends or stores the
+  email. Uses `.on("submit")`, `.prop()`, `.text()`, and `setTimeout`.
 
 ## Live Site
 

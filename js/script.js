@@ -118,4 +118,26 @@ $(document).ready(function () {
 
     $(window).on("load scroll resize", animateCounters);
     animateCounters();
+
+    // Task 6: keep the button busy while a short timer simulates a server call.
+    $("#reminder-form").on("submit", function (event) {
+        event.preventDefault();
+        const form = $(this);
+        const button = $("#reminder-submit");
+        if (button.prop("disabled") || !this.reportValidity()) return;
+
+        button.prop("disabled", true);
+        button.find(".spinner-border").prop("hidden", false);
+        button.find(".submit-label").text("Please wait...");
+        form.attr("aria-busy", "true");
+        $("#reminder-status").text("Preparing your demo reminder...");
+
+        window.setTimeout(function () {
+            button.prop("disabled", false);
+            button.find(".spinner-border").prop("hidden", true);
+            button.find(".submit-label").text("Submit");
+            form.attr("aria-busy", "false");
+            $("#reminder-status").text("Demo reminder ready! No email was sent.");
+        }, 1500);
+    });
 });
