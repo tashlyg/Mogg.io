@@ -215,6 +215,11 @@ The examples use jQuery in `js/script.js` on `index.html`.
   with a completion message. Invalid emails use browser validation; repeated
   submits during the delay are ignored. This demo never sends or stores the
   email. Uses `.on("submit")`, `.prop()`, `.text()`, and `setTimeout`.
+- **Task 7:** completing the reminder demo also shows a notification in the
+  bottom-right corner. It stays for three seconds, then fades out. The latest
+  action replaces the previous message and restarts its timer. A polite live
+  region announces feedback without moving focus. Uses `.fadeIn()`, `.fadeOut()`,
+  `.stop()`, and `clearTimeout`; reduced-motion settings skip the fades.
 
 ## Live Site
 

@@ -138,6 +138,21 @@ $(document).ready(function () {
             button.find(".submit-label").text("Submit");
             form.attr("aria-busy", "false");
             $("#reminder-status").text("Demo reminder ready! No email was sent.");
+            showNotification("Demo reminder ready! No email was sent.");
         }, 1500);
     });
+
+    // Task 7: replace old feedback and restart its timer for the latest action.
+    let notificationTimer;
+
+    function showNotification(message) {
+        const notification = $("#action-notification");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.clearTimeout(notificationTimer);
+        notification.stop(true, true).text(message).fadeIn(reducedMotion ? 0 : 200);
+
+        notificationTimer = window.setTimeout(function () {
+            notification.fadeOut(reducedMotion ? 0 : 400);
+        }, 3000);
+    }
 });
