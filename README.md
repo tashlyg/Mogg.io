@@ -205,6 +205,10 @@ The examples use jQuery in `js/script.js` on `index.html`.
 - **Task 4:** the orange gradient bar at the top fills as you scroll. Its width
   is the scroll position divided by the scrollable page height, multiplied by
   100. It updates on scrolling, resizing, loading, and filtering the tips.
+- **Task 5:** **Your Routine at a Glance** counts up to 6 tips, 3 daily habits,
+  and 15 minutes. jQuery `.animate()` updates the numbers over 1.5 seconds when
+  the section first enters view. Each counter finishes at its exact target and
+  does not restart on later scrolls. Reduced-motion settings skip the animation.
 
 ## Live Site
 

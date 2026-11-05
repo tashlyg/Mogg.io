@@ -91,4 +91,31 @@ $(document).ready(function () {
     $(window).on("load scroll resize", updateScrollProgress);
     $("#habit-search").on("input", updateScrollProgress);
     updateScrollProgress();
+
+    // Task 5: animate each number once, when the stats enter the screen.
+    let countersStarted = false;
+
+    function animateCounters() {
+        const screenBottom = $(window).scrollTop() + $(window).height();
+        if (countersStarted || screenBottom <= $("#site-stats").offset().top) return;
+        countersStarted = true;
+
+        $(".stat-number").each(function () {
+            const counter = $(this);
+            const target = Number(counter.attr("data-target"));
+
+            $({ value: 0 }).animate({ value: target }, {
+                duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1500,
+                step: function (value) {
+                    counter.text(Math.floor(value));
+                },
+                complete: function () {
+                    counter.text(target);
+                }
+            });
+        });
+    }
+
+    $(window).on("load scroll resize", animateCounters);
+    animateCounters();
 });

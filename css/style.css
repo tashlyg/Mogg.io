@@ -398,6 +398,14 @@ footer a:focus-visible {
   background: linear-gradient(90deg, #a6370e, #ff6b35, #ffc857);
 }
 
+/* Assignment 6, task 5 */
+.stat-number {
+  color: var(--color-link);
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Mobile */
 @media screen {
   body,
