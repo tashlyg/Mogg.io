@@ -202,6 +202,9 @@ The examples use jQuery in `js/script.js` on `index.html`.
   finds matches, and `<mark>` elements wrap them. Only text nodes change, so
   existing controls keep working. Search symbols are treated literally, and
   form values, scripts, and the suggestions dropdown are excluded.
+- **Task 4:** the orange gradient bar at the top fills as you scroll. Its width
+  is the scroll position divided by the scrollable page height, multiplied by
+  100. It updates on scrolling, resizing, loading, and filtering the tips.
 
 ## Live Site
 

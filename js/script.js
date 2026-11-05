@@ -77,4 +77,18 @@ $(document).ready(function () {
                 $(this).replaceWith(fragment);
             });
     });
+
+    // Task 4: convert the scroll position into a percentage.
+    function updateScrollProgress() {
+        const scrollableHeight = $(document).height() - $(window).height();
+        const percent = scrollableHeight > 0 ? $(window).scrollTop() / scrollableHeight * 100 : 100;
+        const progress = Math.max(0, Math.min(100, percent));
+
+        $("#scroll-progress-fill").css("width", progress + "%");
+        $("#scroll-progress").attr("aria-valuenow", Math.round(progress));
+    }
+
+    $(window).on("load scroll resize", updateScrollProgress);
+    $("#habit-search").on("input", updateScrollProgress);
+    updateScrollProgress();
 });
