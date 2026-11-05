@@ -186,7 +186,8 @@ Open **Daily Mogg Challenge** on `index.html`.
 
 ## Assignment 6
 
-The examples use jQuery in `js/script.js` on `index.html`.
+The examples use jQuery in `js/script.js` on `index.html`; `gallery.html` also
+loads the script for lazy loading.
 
 - **Task 0:** jQuery 4.0.0 loads from the CDN in the HTML head. The external
   script uses `$(document).ready()` and prints `jQuery is ready!` in the console.
@@ -228,6 +229,27 @@ The examples use jQuery in `js/script.js` on `index.html`.
   Clipboard API with `.on("click")`, `.text()`, and `.prop()`; browsers without
   that API use a temporary textarea and `execCommand("copy")`, restoring focus
   and selection afterward. The buttons also work with Tab and Enter or Space.
+- **Task 9:** homepage challenge/card images and all nine gallery fish start
+  with tiny inline placeholders. `IntersectionObserver` detects entry into the
+  viewport; jQuery `.attr("src")` then loads the real `data-src` image once.
+  Hidden carousel slides wait until they are shown. The logo loads immediately.
+  Existing icon dimensions, card image heights, and the carousel's 4:3 frame
+  reserve space, and loaded images fade in (unless reduced motion is enabled).
+  Older browsers fall back to scroll, resize, and carousel events plus viewport
+  bounds checks. The stats initializer skips pages without counters.
+
+### Tasks 6-9 review demo
+
+1. Submit an invalid email, then a valid one. Confirm the busy button ignores
+   repeated submits and returns to normal after 1.5 seconds.
+2. Watch the completion notification disappear. Submit again before it hides
+   to see the notification timer restart.
+3. Copy each snippet, paste it into your notes, and check the checkmark and
+   tooltip. Try keyboard activation and Escape; blocked clipboard permission
+   should display a manual-copy message.
+4. Reload at the top with the browser's Network panel open. Scroll to the
+   illustrations, then open the gallery and switch slides. Image files should
+   be requested only as their images enter view; revisiting a slide reuses it.
 
 ## Live Site
 

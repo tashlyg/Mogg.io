@@ -96,8 +96,10 @@ $(document).ready(function () {
     let countersStarted = false;
 
     function animateCounters() {
+        const stats = $("#site-stats");
+        if (countersStarted || stats.length === 0) return;
         const screenBottom = $(window).scrollTop() + $(window).height();
-        if (countersStarted || screenBottom <= $("#site-stats").offset().top) return;
+        if (screenBottom <= stats.offset().top) return;
         countersStarted = true;
 
         $(".stat-number").each(function () {
@@ -217,4 +219,45 @@ $(document).ready(function () {
             $("#" + $(this).attr("aria-describedby")).prop("hidden", true);
         }
     });
+
+    // Task 9: replace a tiny placeholder only when an image enters the viewport.
+    function loadImage(element) {
+        const image = $(element);
+        const source = image.attr("data-src");
+        if (!source) return;
+
+        image.one("load error", function () {
+            // On failure, reveal the image's alt text instead of hiding it.
+            image.addClass("is-loaded");
+        });
+        image.attr("src", source).removeAttr("data-src");
+    }
+
+    const lazyImages = $("img[data-src]");
+    if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    loadImage(entry.target);
+                    imageObserver.unobserve(entry.target);
+                }
+            });
+        });
+        lazyImages.each(function () { imageObserver.observe(this); });
+    } else {
+        // Older browsers check visible images on scroll and carousel changes.
+        function loadVisibleImages() {
+            $("img[data-src]").each(function () {
+                const bounds = this.getBoundingClientRect();
+                if ($(this).is(":visible") && bounds.bottom > 0 && bounds.top < window.innerHeight
+                    && bounds.right > 0 && bounds.left < window.innerWidth) {
+                    loadImage(this);
+                }
+            });
+        }
+        $(window).on("load scroll resize", loadVisibleImages);
+        $("#fishCarousel").on("slid.bs.carousel", loadVisibleImages);
+        $("#habit-search").on("input", loadVisibleImages);
+        loadVisibleImages();
+    }
 });

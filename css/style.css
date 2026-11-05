@@ -453,6 +453,22 @@ footer a:focus-visible {
   left: -9999px;
 }
 
+/* Assignment 6, task 9: existing image sizes reserve space while loading. */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-image.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-image {
+    transition: none;
+  }
+}
+
 /* Mobile */
 @media screen {
   body,
