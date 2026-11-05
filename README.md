@@ -194,6 +194,9 @@ The examples use jQuery in `js/script.js` on `index.html`.
   Matching ignores case and extra spaces at the ends. Clear the field to show
   all tips; an unmatched search displays a message. Uses `.on()`, `.each()`,
   `.text()`, and `.toggle()`.
+- **Task 2:** the same field offers matching tip names in a dropdown. Select
+  one by clicking it or using Tab and Enter. Escape or clicking outside closes
+  the dropdown. Empty and unmatched searches show no suggestions.
 
 ## Live Site
 

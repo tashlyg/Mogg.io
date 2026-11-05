@@ -341,6 +341,38 @@ footer a:focus-visible {
   display: none;
 }
 
+/* Assignment 6, task 2 */
+.habit-search-box {
+  position: relative;
+}
+
+#habit-suggestions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#habit-suggestions button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+}
+
+#habit-suggestions button:hover,
+#habit-suggestions button:focus-visible {
+  background: #ffe4d6;
+}
+
 /* Mobile */
 @media screen {
   body,
