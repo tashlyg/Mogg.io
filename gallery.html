@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Mogg.io</title>
+    <script src="js/theme.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
@@ -45,6 +46,13 @@
             <a href="gallery.html" aria-current="page">Image gallery</a>
             <a href="profile.html">My profile</a>
         </nav>
+        <div class="theme-settings">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="theme-toggle" aria-describedby="theme-status">
+                <label class="form-check-label" for="theme-toggle">Dark mode</label>
+            </div>
+            <p id="theme-status" class="small mt-2 mb-0" role="status">Light mode is on.</p>
+        </div>
     </aside>
     </div>
     <main class="col-12 col-lg-10">

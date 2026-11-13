@@ -54,12 +54,11 @@ if (popupElement) {
 
 // task 4
 
-const colors = ["#c1fdff", "#ffe4d6", "#e2f0cb"];
 let colorIndex = 0;
 
 document.getElementById("change-background")?.addEventListener("click", function () {
-    colorIndex = (colorIndex + 1) % colors.length;
-    document.body.style.backgroundColor = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % 3;
+    document.body.dataset.background = String(colorIndex);
 });
 
 // task 5

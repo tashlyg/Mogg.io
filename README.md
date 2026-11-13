@@ -253,9 +253,23 @@ loads the script for lazy loading.
    illustrations, then open the gallery and switch slides. Image files should
    be requested only as their images enter view; revisiting a slide reuses it.
 
+## Light and dark modes
+
+Use the **Dark mode** switch in **Explore Mogg.io** on any of the six pages.
+Unchecked selects light mode; checked selects dark mode. The choice is stored
+under `mogg.theme` in localStorage and restored before styles load, including
+when navigating between pages. Open tabs and Back/Forward navigation also sync
+the preference. If storage is blocked, the switch still works for the visit.
+
+`js/theme.js` sets Bootstrap's `data-bs-theme` attribute and updates the switch
+and status text. CSS variables swap background and text colors while keeping
+images and videos in their original colors. Cards, tables, forms, field errors,
+ratings, search suggestions, completed habits, and carousel controls adapt too.
+The earlier background-color demo uses matching light/dark color variants.
+
 ## Final project part 5
 
-Only part 5 is implemented here; the existing live habit search supplies 5.3.
+The account and validation features cover part 5; the existing live habit search supplies 5.3.
 
 - **5.1 Authentication simulation:** choose **My Profile** in the navigation on
   any page. Create an account with a name, email, phone number, password, and

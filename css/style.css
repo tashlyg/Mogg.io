@@ -7,6 +7,76 @@
   --color-text: #22282b;
   --color-border: #e0dcd4;
   --color-bg-japas: #c1fdff;
+  --color-solid: #2f3e46;
+  --color-error: #a32121;
+  --color-stripe: #f4f2ee;
+  --color-success-bg: #e2f0cb;
+  --color-success-border: #48752b;
+  --color-hover: #ffe4d6;
+  --color-star: #687078;
+  --color-focus-ring: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-bs-theme="dark"] {
+  --color-bg: #14191d;
+  --color-primary: #e7eff3;
+  --color-accent: #ffab8c;
+  --color-link: #ffab8c;
+  --color-card: #20282e;
+  --color-text: #e7e9eb;
+  --color-border: #49565f;
+  --color-bg-japas: #132b30;
+  --color-solid: #283840;
+  --color-error: #ff9e9e;
+  --color-stripe: #29333b;
+  --color-success-bg: #263d2d;
+  --color-success-border: #90ba75;
+  --color-hover: #4d3025;
+  --color-star: #aeb7bf;
+  --color-focus-ring: #14191d;
+  color-scheme: dark;
+}
+
+/* Preserve the earlier background-color demo in both themes. */
+body[data-background="0"] { --color-bg: #c1fdff; }
+body[data-background="1"] { --color-bg: #ffe4d6; }
+body[data-background="2"] { --color-bg: #e2f0cb; }
+[data-bs-theme="dark"] body[data-background="0"] { --color-bg: #132b30; }
+[data-bs-theme="dark"] body[data-background="1"] { --color-bg: #33241e; }
+[data-bs-theme="dark"] body[data-background="2"] { --color-bg: #223020; }
+
+.theme-settings {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.theme-settings label,
+.theme-settings input {
+  cursor: pointer;
+}
+
+:root[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #9ec5fe;
+  --bs-btn-border-color: #9ec5fe;
+  --bs-btn-hover-color: #14191d;
+  --bs-btn-hover-bg: #9ec5fe;
+  --bs-btn-hover-border-color: #9ec5fe;
+  --bs-btn-active-color: #14191d;
+  --bs-btn-active-bg: #9ec5fe;
+  --bs-btn-active-border-color: #9ec5fe;
+  --bs-btn-disabled-color: #9ec5fe;
+  --bs-btn-disabled-border-color: #9ec5fe;
+}
+
+:root[data-bs-theme="dark"] .carousel-dark .carousel-control-prev-icon,
+:root[data-bs-theme="dark"] .carousel-dark .carousel-control-next-icon {
+  filter: none;
+}
+
+:root[data-bs-theme="dark"] .carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: #fff;
 }
 
 /* Final project 5: inline validation and the account page. */
@@ -15,7 +85,7 @@
 }
 
 .field-error {
-  color: #a32121;
+  color: var(--color-error);
   font-size: 0.9em;
   margin: 0.35rem 0 0;
 }
@@ -77,7 +147,7 @@ th, td {
 }
 
 th {
-  background-color: var(--color-primary);
+  background-color: var(--color-solid);
   color: #fff;
 }
 
@@ -86,6 +156,7 @@ th {
 }
 
 .card {
+  color: var(--color-text);
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: 12px;
@@ -126,11 +197,11 @@ th {
 }
 
 .hobby-table tr:nth-child(even) {
-  background-color: #f4f2ee;
+  background-color: var(--color-stripe);
 }
 
 footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-solid);
   color: #fff;
   text-align: center;
   grid-area: footer;
@@ -143,7 +214,7 @@ footer {
 
 .site-nav .nav-link:hover,
 .site-nav .nav-link:focus-visible {
-  background-color: var(--color-link);
+  background-color: #a6370e;
   color: #fff;
   text-decoration: none;
 }
@@ -166,10 +237,10 @@ footer a:focus-visible {
   color: #fff;
 }
 
-:is(a, button, input, textarea):focus-visible {
+:is(a, button, input, textarea, select):focus-visible {
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px #fff;
+  box-shadow: 0 0 0 4px var(--color-focus-ring);
 }
 
 * { box-sizing: border-box; }
@@ -250,7 +321,7 @@ footer a:focus-visible {
 .rating-stars button {
   background: transparent;
   border: 0;
-  color: #687078;
+  color: var(--color-star);
   font-size: 2rem;
   padding: 0.25rem;
   cursor: pointer;
@@ -262,7 +333,7 @@ footer a:focus-visible {
 }
 
 .routine-demo.is-complete {
-  background-color: #e2f0cb;
+  background-color: var(--color-success-bg);
   transform: translateY(-6px);
 }
 
@@ -316,20 +387,20 @@ footer a:focus-visible {
 }
 
 .challenge-option.is-checked {
-  background-color: #e2f0cb;
-  border-color: #48752b;
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-border);
 }
 
 .challenge-progress {
   width: 100%;
   height: 1.25rem;
-  accent-color: #48752b;
+  accent-color: var(--color-success-border);
 }
 
 .challenge-badge {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background-color: var(--color-primary);
+  background-color: var(--color-solid);
   color: #fff;
   font-weight: 600;
 }
@@ -393,7 +464,7 @@ footer a:focus-visible {
 
 #habit-suggestions button:hover,
 #habit-suggestions button:focus-visible {
-  background: #ffe4d6;
+  background: var(--color-hover);
 }
 
 /* Assignment 6, task 3 */
@@ -411,7 +482,7 @@ footer a:focus-visible {
   width: 100%;
   height: 8px;
   z-index: 1100;
-  background-color: #e0dcd4;
+  background-color: var(--color-border);
 }
 
 #scroll-progress-fill {
@@ -444,7 +515,7 @@ footer a:focus-visible {
   padding: 1rem 1.25rem;
   border-left: 5px solid var(--color-accent);
   border-radius: 8px;
-  background-color: var(--color-primary);
+  background-color: var(--color-solid);
   color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
@@ -464,7 +535,7 @@ footer a:focus-visible {
   max-width: calc(100vw - 6rem);
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  background-color: var(--color-primary);
+  background-color: var(--color-solid);
   color: #fff;
   font-size: 0.875rem;
   pointer-events: none;

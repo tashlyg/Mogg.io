@@ -23,7 +23,7 @@ function initializeRating() {
             const rating = Number(star.value);
 
             ratingStars.forEach(function (button) {
-                button.style.color = Number(button.value) <= rating ? "#a6370e" : "#687078";
+                button.style.color = Number(button.value) <= rating ? "var(--color-link)" : "var(--color-star)";
                 button.setAttribute("aria-pressed", String(button === star));
             });
 
