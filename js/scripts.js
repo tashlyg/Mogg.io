@@ -1,5 +1,4 @@
-// task 1
-// Form ID: contact-form. Input IDs: name, email, password, confirm-password, message.
+// Final project 5.2 reuses the contact rules through the shared validator.
 
 const form = document.getElementById("contact-form");
 
@@ -9,25 +8,14 @@ if (form) {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const emailInput = document.getElementById("email");
-        const email = emailInput.value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
-        const message = document.getElementById("message").value.trim();
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const status = document.getElementById("contact-status");
+        status.textContent = "";
+        if (!FormValidation.validate(form)) return;
+        status.textContent = "Your message passed validation. This is a demo; no message was sent.";
+    });
 
-        if (name === "" || email === "" || password.trim() === "" || confirmPassword.trim() === "" || message === "") {
-            alert("Please fill in all required fields.");
-        } else if (!emailPattern.test(email) || emailInput.validity.typeMismatch) {
-            alert("Please enter a valid email address.");
-        } else if (password.length < 8 || password.length > 32) {
-            alert("Password must be between 8 and 32 characters.");
-        } else if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-        } else {
-            alert("All fields are valid.");
-        }
+    form.addEventListener("input", function () {
+        document.getElementById("contact-status").textContent = "";
     });
 }
 

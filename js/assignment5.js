@@ -92,7 +92,7 @@ function initializeRoutinePlanner() {
 
     function goToNextStep() {
         routineName.value = routineName.value.trim();
-        if (routineName.reportValidity()) {
+        if (FormValidation.validate(planner, ["routine-name"])) {
             showStep(1);
         }
     }
@@ -111,13 +111,14 @@ function initializeRoutinePlanner() {
             return;
         }
 
-        // The form uses novalidate because the name field can be in a hidden step.
+        // Reveal a hidden invalid field before asking the shared validator to focus it.
         routineName.value = routineName.value.trim();
-        if (!routineName.checkValidity()) {
+        if (FormValidation.getError(routineName)) {
             showStep(0);
-            routineName.reportValidity();
+            FormValidation.validate(planner, ["routine-name"]);
             return;
         }
+        if (!FormValidation.validate(planner)) return;
 
         plannerResult.textContent = routineName.value + ", your focus is " + routineFocus.value + ". Your plan is ready for this visit!";
     });

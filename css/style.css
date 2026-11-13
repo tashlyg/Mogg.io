@@ -9,6 +9,29 @@
   --color-bg-japas: #c1fdff;
 }
 
+/* Final project 5: inline validation and the account page. */
+[hidden] {
+  display: none !important;
+}
+
+.field-error {
+  color: #a32121;
+  font-size: 0.9em;
+  margin: 0.35rem 0 0;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.account-container {
+  max-width: 900px;
+}
+
+.profile-details dd {
+  overflow-wrap: anywhere;
+}
+
 body {
   font-family: 'Segoe UI', Verdana, sans-serif;
   background-color: var(--color-bg);

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Mogg.io</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="m-0">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg bg-dark site-nav" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="assets/mogg_face.png" alt="Mogg.io logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-3">Home</a>
+                        <a href="about1.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-3">About Bekzhan</a>
+                        <a href="about2.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-3">About Didar</a>
+                        <a href="contacts.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-3">Contact</a>
+                        <a href="profile.html" class="nav-link text-white fw-semibold rounded py-3 px-3 px-lg-3 active" aria-current="page">My Profile</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-2">
+                <aside class="sidebar ms-3 p-3">
+                    <h2>Explore Mogg.io</h2>
+                    <p class="my-2">Meet the team and build your daily routine.</p>
+                    <nav aria-label="Sidebar navigation" class="gap-2">
+                        <a href="index.html">Daily habits</a>
+                        <a href="about1.html">Meet Bekzhan</a>
+                        <a href="about2.html">Meet Didar</a>
+                        <a href="contacts.html">Get in touch</a>
+                        <a href="gallery.html">Image gallery</a>
+                        <a href="profile.html" aria-current="page">My profile</a>
+                    </nav>
+                </aside>
+            </div>
+            <main id="account-page" class="col-12 col-lg-10">
+                <div class="container py-4 account-container">
+                    <h1>My Mogg.io Profile</h1>
+                    <p>Your space to start a daily habit and keep showing up for yourself.</p>
+                    <p class="small">Classroom demo: account details, including passwords, are stored in this browser. Use made-up details and a password you do not use elsewhere.</p>
+                    <p id="account-status" class="field-error" role="alert"></p>
+                    <noscript><p>Enable JavaScript to sign up, log in, and view your profile.</p></noscript>
+
+                    <section id="login-section" class="card p-3 p-lg-4 my-3" aria-labelledby="login-title">
+                        <h2 id="login-title">Log In</h2>
+                        <p>Welcome back. All fields are required.</p>
+                        <form id="login-form" novalidate>
+                            <div class="mb-3">
+                                <label for="login-email" class="form-label">Email</label>
+                                <input type="text" inputmode="email" autocomplete="username" id="login-email" name="email" class="form-control" data-validate="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="login-password" class="form-label">Password</label>
+                                <input type="password" autocomplete="current-password" id="login-password" name="password" class="form-control" data-validate="password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                            <p id="login-status" class="mt-3 mb-0" role="status"></p>
+                        </form>
+                        <p class="mt-3 mb-0">New here? <a href="profile.html?view=signup">Create an account</a>.</p>
+                    </section>
+
+                    <section id="signup-section" class="card p-3 p-lg-4 my-3" aria-labelledby="signup-title" hidden>
+                        <h2 id="signup-title">Sign Up</h2>
+                        <p>Create your demo account. All fields are required.</p>
+                        <form id="signup-form" class="row g-3" novalidate>
+                            <div class="col-12 col-md-6">
+                                <label for="signup-name" class="form-label">Name</label>
+                                <input type="text" autocomplete="name" id="signup-name" name="name" class="form-control" data-validate="name">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="signup-email" class="form-label">Email</label>
+                                <input type="text" inputmode="email" autocomplete="email" id="signup-email" name="email" class="form-control" data-validate="email">
+                            </div>
+                            <div class="col-12">
+                                <label for="signup-phone" class="form-label">Phone number</label>
+                                <input type="tel" autocomplete="tel" id="signup-phone" name="phone" class="form-control" placeholder="+7 700 123 4567" data-validate="phone" aria-describedby="signup-phone-help">
+                                <p id="signup-phone-help" class="small mt-1 mb-0">10–15 digits; spaces, parentheses, hyphens and a leading + are allowed.</p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="signup-password" class="form-label">Password</label>
+                                <input type="password" autocomplete="new-password" id="signup-password" name="password" class="form-control" data-validate="password" aria-describedby="signup-password-help">
+                                <p id="signup-password-help" class="small mt-1 mb-0">8–32 characters: uppercase, lowercase, a number and a symbol. No spaces.</p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="signup-confirm" class="form-label">Confirm password</label>
+                                <input type="password" autocomplete="new-password" id="signup-confirm" name="confirm-password" class="form-control" data-validate="confirm" data-confirm-for="signup-password">
+                            </div>
+                            <div class="col-12"><button type="submit" class="btn btn-primary">Sign Up</button></div>
+                            <p id="signup-status" class="col-12 mb-0" role="status"></p>
+                        </form>
+                        <p class="mt-3 mb-0">Already registered? <a href="profile.html?view=login">Log in</a>.</p>
+                    </section>
+
+                    <section id="profile-section" class="card p-3 p-lg-4 my-3" aria-labelledby="profile-title" hidden>
+                        <img src="assets/mogg_face.png" class="profile-img circle align-self-start mb-3" width="120" height="120" alt="Mogg.io mascot">
+                        <h2 id="profile-title">Welcome to your profile</h2>
+                        <dl class="profile-details">
+                            <dt>Name</dt><dd id="profile-name"></dd>
+                            <dt>Email</dt><dd id="profile-email"></dd>
+                            <dt>Phone</dt><dd id="profile-phone"></dd>
+                        </dl>
+                        <p>Ready for a small win today? Find a habit or complete your daily challenge.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="index.html#habit-search-title" class="btn btn-primary">Find a habit</a>
+                            <a href="index.html#daily-challenge" class="btn btn-outline-primary">Daily challenge</a>
+                            <button type="button" id="logout" class="btn btn-secondary">Log Out</button>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="mt-0 py-4 px-3 px-lg-5"><p class="my-1">Bekzhan Duzeldikov &amp; Didar Marat</p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/assignment5.js"></script>
+</body>
+</html>

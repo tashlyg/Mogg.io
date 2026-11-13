@@ -19,6 +19,7 @@ themed around grooming, style, and general "looksmaxxing" tips.
 | `about2.html` | About page for Didar, with bio, hobbies table, fish tier list, and goals |
 | `contacts.html` | Responsive Bootstrap form with name, email, color picker, message type radios, message, and reply checkbox |
 | `gallery.html` | Nine-image Bootstrap fish carousel with captions, indicators, and previous/next controls |
+| `profile.html` | Sign-up, login, and a locally stored demo profile with logout |
 
 ## Project Structure
 
@@ -29,6 +30,7 @@ Mogg.io/
 ├── about2.html
 ├── contacts.html
 ├── gallery.html
+├── profile.html
 ├── css/
 │   └── style.css
 ├── js/
@@ -62,7 +64,7 @@ Mogg.io/
 | Responsive typography | Body text uses 14px on mobile, 16px from 768px, and 18px from 1024px |
 | Bootstrap grid | Containers, rows, and responsive columns; the homepage introduction and video use `col-lg-6` |
 | Spacing utilities | Bootstrap padding, margin, and gap classes, including responsive variants |
-| Navigation bar | Four links on every page, with a hamburger menu below 992px |
+| Navigation bar | Five links on every page, including My Profile, with a hamburger menu below 992px |
 | Buttons | Primary, secondary, and outline buttons, a small button group, and a large form submit button |
 | Carousel | Nine fish images with captions, nine indicators, and previous/next controls in `gallery.html` |
 | Cards | Three homepage cards use `card-group`, `card-img-top`, `card-body`, and `card-title`; they stack below 992px |
@@ -250,6 +252,53 @@ loads the script for lazy loading.
 4. Reload at the top with the browser's Network panel open. Scroll to the
    illustrations, then open the gallery and switch slides. Image files should
    be requested only as their images enter view; revisiting a slide reuses it.
+
+## Final project part 5
+
+Only part 5 is implemented here; the existing live habit search supplies 5.3.
+
+- **5.1 Authentication simulation:** choose **My Profile** in the navigation on
+  any page. Create an account with a name, email, phone number, password, and
+  matching confirmation. Sign-up stores accounts in `localStorage` under
+  `mogg.users`; email addresses are trimmed and lowercased, and duplicate emails
+  are rejected. Log In checks the saved credentials, stores the active email in
+  `mogg.currentUser`, and redirects to `profile.html`. The profile displays the
+  saved name, email, and phone, plus working links to habits and the challenge.
+  Log Out removes the active session but keeps registered accounts. Reloading
+  preserves login; missing or invalid sessions show the login form instead.
+- **5.2 Form validation:** `js/validation.js` shares validation rules between
+  sign-up, login, the contact form, the reminder, and the two-step planner.
+  All forms use `novalidate`. JavaScript checks required fields and applicable
+  email, password, confirmation, phone, and focus values. Passwords need 8–32
+  characters, uppercase and lowercase letters, a digit and a symbol, with no
+  whitespace. Phones accept 10–15 digits, an optional leading +, spaces,
+  parentheses and hyphens. Errors appear beside fields, are associated through
+  `aria-describedby`, and focus moves to the first invalid field. No alerts,
+  `required`, `pattern`, length attributes, or `type="email"` validation is used.
+- **5.3 Search/filtering:** **Find a Daily Habit** on the homepage already filters
+  six tips as you type, offers title suggestions, and handles no-match and clear
+  states. Profile links take visitors directly to that search. Saving results
+  is optional in the requirements, so the search remains per visit.
+
+This is deliberately a frontend classroom simulation: passwords are stored as
+plain text locally, accounts are browser-specific, and the session marker is
+editable. It does not provide real authentication or protect sensitive data.
+Use made-up details and a test password. For consistent storage, serve all pages
+from the same origin (for example GitHub Pages or a local development server);
+`file://` storage behavior varies between browsers. No backend or email is used.
+
+### Part 5 demo
+
+1. Open My Profile, choose Create an account, and submit empty/invalid values.
+   Try a malformed email, weak password, short phone, and mismatched passwords.
+2. Register valid demo details, then attempt the same email with different case.
+   Confirm the duplicate is rejected.
+3. Log in with an incorrect password, then the correct one. Confirm the profile
+   shows saved details without displaying the password, including after reload.
+4. Log out and revisit My Profile. Confirm the login form returns. Sign in again
+   to show that registration persists.
+5. Check contact, reminder and planner errors, then search for `walk` and an
+   unmatched word on the homepage. Clear the search to restore all six tips.
 
 ## Live Site
 

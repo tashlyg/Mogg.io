@@ -126,7 +126,9 @@ $(document).ready(function () {
         event.preventDefault();
         const form = $(this);
         const button = $("#reminder-submit");
-        if (button.prop("disabled") || !this.reportValidity()) return;
+        if (button.prop("disabled")) return;
+        $("#reminder-status").text("");
+        if (!FormValidation.validate(this)) return;
 
         button.prop("disabled", true);
         button.find(".spinner-border").prop("hidden", false);
