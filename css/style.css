@@ -356,7 +356,7 @@ footer a:focus-visible {
   }
 }
 
-/* Assignment 5, task 5: challenge state stays in CSS, behavior in challenges.js. */
+/* Assignment 5, task 5: challenge state stays in CSS, behavior in daily-challenge.js. */
 .challenge-options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

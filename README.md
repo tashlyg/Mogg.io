@@ -34,9 +34,14 @@ Mogg.io/
 ├── css/
 │   └── style.css
 ├── js/
-│   ├── scripts.js
-│   ├── assignment5.js
-│   └── challenges.js
+│   ├── auth.js
+│   ├── contact-and-page-tools.js
+│   ├── daily-challenge.js
+│   ├── jquery-features.js
+│   ├── quotes.js
+│   ├── routine-and-navigation.js
+│   ├── theme.js
+│   └── validation.js
 ├── assets/
 │   ├── beka.jpg
 │   ├── fish.png
@@ -91,9 +96,9 @@ YouTube video.
 
 ## Assignment 5 (tasks 1-5)
 
-Examples use plain JavaScript in `js/assignment5.js` and `js/challenges.js` and
+Examples use plain JavaScript in `js/routine-and-navigation.js` and `js/daily-challenge.js` and
 continue the existing website. Earlier assignment features remain in
-`js/scripts.js`.
+`js/contact-and-page-tools.js`.
 
 ### Task 1: DOM manipulation and styling
 
@@ -145,7 +150,7 @@ Open **Daily Basics** on `index.html`.
 - HTML files contain page structure and accessible controls, `css/style.css`
   contains presentation, and external JavaScript files contain behavior.
   The contact icon's inline dimensions were moved into the `contact-icon` class.
-- `js/assignment5.js` uses separate named initialization functions for read-more,
+- `js/routine-and-navigation.js` uses separate named initialization functions for read-more,
   ratings, check-in time, menu navigation, the planner, and the daily routine.
   Each function keeps its variables local and skips pages without that feature.
 - Repeated state changes are handled by functions such as `showStep` and
@@ -169,7 +174,7 @@ Open **Daily Mogg Challenge** on `index.html`.
   Progress lasts for the current page visit. The layout stacks on small screens,
   status updates are announced to screen readers, and reduced-motion settings
   disable the celebration animation.
-- For the defense: `js/challenges.js` keeps checkbox state as the source of truth.
+- For the defense: `js/daily-challenge.js` keeps checkbox state as the source of truth.
   `filter` counts completed habits and finds suggestions; `Math.random` picks a
   suggestion. `updateChallenge` synchronizes progress, messages, button states,
   and CSS classes. Task 3 supplies the separate sound interaction.
@@ -188,7 +193,7 @@ Open **Daily Mogg Challenge** on `index.html`.
 
 ## Assignment 6
 
-The examples use jQuery in `js/script.js` on `index.html`; `gallery.html` also
+The examples use jQuery in `js/jquery-features.js` on `index.html`; `gallery.html` also
 loads the script for lazy loading.
 
 - **Task 0:** jQuery 4.0.0 loads from the CDN in the HTML head. The external
