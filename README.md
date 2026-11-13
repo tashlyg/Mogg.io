@@ -18,7 +18,7 @@ themed around grooming, style, and general "looksmaxxing" tips.
 | `about1.html` | About page for Bekzhan, with bio, hobbies table, routine, and goals |
 | `about2.html` | About page for Didar, with bio, hobbies table, fish tier list, and goals |
 | `contacts.html` | Responsive Bootstrap form with name, email, color picker, message type radios, message, and reply checkbox |
-| `gallery.html` | Nine-image Bootstrap fish carousel with captions, indicators, and previous/next controls |
+| `gallery.html` | Nine-image Bootstrap looksmaxxing carousel with captions, indicators, and previous/next controls |
 | `profile.html` | Sign-up, login, and a locally stored demo profile with logout |
 
 ## Project Structure
@@ -45,7 +45,7 @@ Mogg.io/
 │   ├── skincare.png
 │   ├── grooming.png
 │   ├── posture.png
-│   └── fih/ (fih1.png through fih9.png)
+│   └── looksmaxxing/ (nine numbered gallery images)
 └── README.md
 ```
 
@@ -66,7 +66,7 @@ Mogg.io/
 | Spacing utilities | Bootstrap padding, margin, and gap classes, including responsive variants |
 | Navigation bar | Five links on every page, including My Profile, with a hamburger menu below 992px |
 | Buttons | Primary, secondary, and outline buttons, a small button group, and a large form submit button |
-| Carousel | Nine fish images with captions, nine indicators, and previous/next controls in `gallery.html` |
+| Carousel | Nine looksmaxxing images with captions, nine indicators, and previous/next controls in `gallery.html` |
 | Cards | Three homepage cards use `card-group`, `card-img-top`, `card-body`, and `card-title`; they stack below 992px |
 | Responsive form | `form-control`, `input-group`, `form-check`, and `row g-3`; name and email share a row from 768px |
 | Accessibility | Associated form labels, grouped radio buttons, navigation labels, table column headers, and visible keyboard focus styles |
@@ -231,11 +231,11 @@ loads the script for lazy loading.
   Clipboard API with `.on("click")`, `.text()`, and `.prop()`; browsers without
   that API use a temporary textarea and `execCommand("copy")`, restoring focus
   and selection afterward. The buttons also work with Tab and Enter or Space.
-- **Task 9:** homepage challenge/card images and all nine gallery fish start
+- **Task 9:** homepage challenge/card images and all nine gallery images start
   with tiny inline placeholders. `IntersectionObserver` detects entry into the
   viewport; jQuery `.attr("src")` then loads the real `data-src` image once.
   Hidden carousel slides wait until they are shown. The logo loads immediately.
-  Existing icon dimensions, card image heights, and the carousel's 4:3 frame
+  Existing icon dimensions, card image heights, and the carousel's 16:9 frame
   reserve space, and loaded images fade in (unless reduced motion is enabled).
   Older browsers fall back to scroll, resize, and carousel events plus viewport
   bounds checks. The stats initializer skips pages without counters.

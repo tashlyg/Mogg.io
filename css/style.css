@@ -79,6 +79,15 @@ body[data-background="2"] { --color-bg: #e2f0cb; }
   background-color: #fff;
 }
 
+/* Keep gallery arrows visible over the dark product photographs in either mode. */
+#looksmaxxingCarousel .carousel-control-prev-icon,
+#looksmaxxingCarousel .carousel-control-next-icon {
+  filter: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 65%;
+  border-radius: 50%;
+}
+
 /* Final project 5: inline validation and the account page. */
 [hidden] {
   display: none !important;

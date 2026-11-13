@@ -258,7 +258,7 @@ $(document).ready(function () {
             });
         }
         $(window).on("load scroll resize", loadVisibleImages);
-        $("#fishCarousel").on("slid.bs.carousel", loadVisibleImages);
+        $("#looksmaxxingCarousel").on("slid.bs.carousel", loadVisibleImages);
         $("#habit-search").on("input", loadVisibleImages);
         loadVisibleImages();
     }
