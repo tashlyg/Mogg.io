@@ -314,6 +314,19 @@ from the same origin (for example GitHub Pages or a local development server);
 5. Check contact, reminder and planner errors, then search for `walk` and an
    unmatched word on the homepage. Clear the search to restore all six tips.
 
+## Final project part 7: external API
+
+**Daily Motivation** on the homepage loads a random quote and its author from
+[DummyJSON Quotes](https://dummyjson.com/docs/quotes). Click **New quote** to
+request another one. The feature supports the site's confidence and daily-habit
+theme and uses the existing light/dark styles.
+
+`js/quotes.js` uses `fetch()` with `async/await` and the
+`https://dummyjson.com/quotes/random` endpoint. While loading, a message appears
+and the button is disabled. Network errors, unsuccessful responses, invalid
+data, and a 10-second timeout show an inline message; the button becomes usable
+again so the visitor can retry. API text is displayed with `textContent`.
+
 ## Live Site
 
 Hosted via GitHub Pages: _https://tashlyg.github.io/Mogg.io/_

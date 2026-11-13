@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/validation.js" defer></script>
+    <script src="js/quotes.js" defer></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="js/script.js"></script>
 </head>
@@ -81,6 +82,23 @@
         <iframe src="https://www.youtube.com/embed/IDWF3qMcliQ?si=feBcY4ClZpJDgCLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     </div>
+    </section>
+
+    <!-- Final project, part 7: motivational quotes from a public API. -->
+    <section class="card p-3 p-lg-4 my-3 my-lg-4" aria-labelledby="quote-title">
+        <h2 id="quote-title">Daily Motivation</h2>
+        <p>A little inspiration to build confidence and keep up your daily habits.</p>
+        <div aria-live="polite" aria-atomic="true">
+            <p id="quote-status">Loading a quote...</p>
+            <figure id="quote-result" hidden>
+                <blockquote class="mb-2">
+                    <p id="quote-text" class="fs-5 mb-0"></p>
+                </blockquote>
+                <figcaption id="quote-author" class="small"></figcaption>
+            </figure>
+        </div>
+        <button type="button" id="new-quote" class="btn btn-outline-primary align-self-start">New quote</button>
+        <p class="small mt-3 mb-0">Quotes from <a href="https://dummyjson.com/docs/quotes">DummyJSON</a>.</p>
     </section>
 
     <!-- Assignment 6, task 5: count up when these stats come into view. -->
