@@ -38,13 +38,17 @@
   color-scheme: dark;
 }
 
-/* Preserve the earlier background-color demo in both themes. */
-body[data-background="0"] { --color-bg: #c1fdff; }
-body[data-background="1"] { --color-bg: #ffe4d6; }
-body[data-background="2"] { --color-bg: #e2f0cb; }
-[data-bs-theme="dark"] body[data-background="0"] { --color-bg: #132b30; }
-[data-bs-theme="dark"] body[data-background="1"] { --color-bg: #33241e; }
-[data-bs-theme="dark"] body[data-background="2"] { --color-bg: #223020; }
+/* Shared background choices, with darker shades for dark mode. */
+:root[data-background="aqua"] { --color-bg: #c1fdff; }
+:root[data-background="peach"] { --color-bg: #ffe4d6; }
+:root[data-background="sage"] { --color-bg: #e2f0cb; }
+:root[data-bs-theme="dark"][data-background="aqua"] { --color-bg: #132b30; }
+:root[data-bs-theme="dark"][data-background="peach"] { --color-bg: #33241e; }
+:root[data-bs-theme="dark"][data-background="sage"] { --color-bg: #223020; }
+
+:root[data-background] {
+  --color-bg-japas: var(--color-bg);
+}
 
 .theme-settings {
   margin-top: 1rem;
@@ -268,6 +272,18 @@ footer a:focus-visible {
 .site-header { grid-area: header; }
 .sidebar { grid-area: sidebar; }
 .page-main { grid-area: main; min-width: 0; }
+
+@media (max-width: 991px) {
+  .page-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "header" "sidebar" "main" "footer";
+  }
+
+  .page-layout .sidebar {
+    margin-right: 1rem;
+  }
+}
 
 
 .sidebar {

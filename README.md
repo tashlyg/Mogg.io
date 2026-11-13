@@ -16,7 +16,7 @@ themed around grooming, style, and general "looksmaxxing" tips.
 |---|---|
 | `index.html` | Homepage with mogging/looksmaxxing tips (skincare, grooming, posture, fitness, confidence) |
 | `about1.html` | About page for Bekzhan, with bio, hobbies table, routine, and goals |
-| `about2.html` | About page for Didar, with bio, hobbies table, fish tier list, and goals |
+| `about2.html` | About page for Didar, with hobbies, playful mogging stats, and goals |
 | `contacts.html` | Responsive Bootstrap form with name, email, color picker, message type radios, message, and reply checkbox |
 | `gallery.html` | Nine-image Bootstrap looksmaxxing carousel with captions, indicators, and previous/next controls |
 | `profile.html` | Sign-up, login, and a locally stored demo profile with logout |
@@ -115,7 +115,6 @@ Open `index.html` and find **Build Your Daily Routine**.
 
 Open **Plan Your Routine** on `index.html`.
 
-- Click **Show current time** to display the time at that click.
 - Enter your name, click **Next**, and choose a focus. **Back** returns to the
   first step without clearing either input. **Save my plan** displays a summary
   without reloading the page. The plan lasts for the current page visit.
@@ -151,7 +150,7 @@ Open **Daily Basics** on `index.html`.
   contains presentation, and external JavaScript files contain behavior.
   The contact icon's inline dimensions were moved into the `contact-icon` class.
 - `js/routine-and-navigation.js` uses separate named initialization functions for read-more,
-  ratings, check-in time, menu navigation, the planner, and the daily routine.
+  ratings, menu navigation, the planner, and the daily routine.
   Each function keeps its variables local and skips pages without that feature.
 - Repeated state changes are handled by functions such as `showStep` and
   `updateChallenge`. Meaningful variable names and short comments explain logic.
@@ -182,7 +181,7 @@ Open **Daily Mogg Challenge** on `index.html`.
 ### Quick defense demo
 
 1. Show and hide the extra advice, then select a high and a low star rating.
-2. Show the time. Move through the planner and back to show that inputs remain.
+2. Move through the planner and back to show that inputs remain.
    Focus a top navigation link and demonstrate arrow-key navigation.
 3. Explain the habit object, loop, and callback. Complete and restart the routine
    to demonstrate the sound and transition.
@@ -270,7 +269,12 @@ the preference. If storage is blocked, the switch still works for the visit.
 and status text. CSS variables swap background and text colors while keeping
 images and videos in their original colors. Cards, tables, forms, field errors,
 ratings, search suggestions, completed habits, and carousel controls adapt too.
-The earlier background-color demo uses matching light/dark color variants.
+The **Change background color** button is in every sidebar. It cycles through
+aqua, peach, sage, and the original background. The choice is saved separately
+under `mogg.background`, restored before styles load, and shared across pages
+and open tabs. Each color has a light and dark shade; selecting the original
+background restores each page's default. If storage is unavailable, the button
+still changes the background for the current visit.
 
 ## Final project part 5
 

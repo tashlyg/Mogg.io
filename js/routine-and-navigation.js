@@ -33,17 +33,6 @@ function initializeRating() {
 }
 
 // Task 2: button events, keyboard events, callbacks, and a switch statement.
-function initializeCheckInTime() {
-    const timeButton = document.getElementById("show-time");
-    if (!timeButton) return;
-
-    const checkInTime = document.getElementById("check-in-time");
-
-    timeButton.addEventListener("click", function () {
-        checkInTime.textContent = "Your check-in time: " + new Date().toLocaleTimeString();
-    });
-}
-
 function initializeKeyboardNavigation() {
     const menuLinks = document.querySelectorAll(".site-nav .nav-link");
 
@@ -187,7 +176,6 @@ function initializeDailyRoutine() {
 // This shared script runs after the HTML on every page; absent features are skipped.
 initializeReadMore();
 initializeRating();
-initializeCheckInTime();
 initializeKeyboardNavigation();
 initializeRoutinePlanner();
 initializeDailyRoutine();

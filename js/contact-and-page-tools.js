@@ -52,15 +52,6 @@ if (popupElement) {
     });
 }
 
-// task 4
-
-let colorIndex = 0;
-
-document.getElementById("change-background")?.addEventListener("click", function () {
-    colorIndex = (colorIndex + 1) % 3;
-    document.body.dataset.background = String(colorIndex);
-});
-
 // task 5
 
 function updateDateTime() {

@@ -1,6 +1,8 @@
-// Apply the saved theme before styles load, then connect the sidebar switch.
+// Apply saved appearance before styles load, then connect the sidebar controls.
 (function initializeTheme() {
     const storageKey = "mogg.theme";
+    const backgroundKey = "mogg.background";
+    const backgrounds = ["default", "aqua", "peach", "sage"];
     const root = document.documentElement;
 
     function readTheme() {
@@ -22,9 +24,30 @@
         }
     }
 
-    applyTheme(readTheme() || "light");
+    function readBackground() {
+        try {
+            const background = localStorage.getItem(backgroundKey);
+            return backgrounds.includes(background) ? background : "default";
+        } catch (error) {
+            return null;
+        }
+    }
 
-    function connectSwitch() {
+    function applyBackground(background, saved = true) {
+        if (background === "default") root.removeAttribute("data-background");
+        else root.setAttribute("data-background", background);
+
+        const status = document.getElementById("background-status");
+        if (status) {
+            status.textContent = "Background: " + background
+                + (saved ? "." : " (for this visit).");
+        }
+    }
+
+    applyTheme(readTheme() || "light");
+    applyBackground(readBackground() || "default");
+
+    function connectSettings() {
         const toggle = document.getElementById("theme-toggle");
         if (!toggle) return;
         applyTheme(root.getAttribute("data-bs-theme"));
@@ -38,17 +61,33 @@
             }
             applyTheme(theme, saved);
         });
+
+        applyBackground(root.getAttribute("data-background") || "default");
+        document.getElementById("change-background").addEventListener("click", function () {
+            const current = root.getAttribute("data-background") || "default";
+            const next = backgrounds[(backgrounds.indexOf(current) + 1) % backgrounds.length];
+            let saved = true;
+            try {
+                localStorage.setItem(backgroundKey, next);
+            } catch (error) {
+                saved = false;
+            }
+            applyBackground(next, saved);
+        });
     }
 
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", connectSwitch);
-    else connectSwitch();
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", connectSettings);
+    else connectSettings();
 
     // Keep open tabs and pages restored with Back/Forward consistent.
     window.addEventListener("storage", function (event) {
         if (event.key === storageKey || event.key === null) applyTheme(readTheme() || "light");
+        if (event.key === backgroundKey || event.key === null) applyBackground(readBackground() || "default");
     });
     window.addEventListener("pageshow", function () {
         const savedTheme = readTheme();
         if (savedTheme) applyTheme(savedTheme);
+        const savedBackground = readBackground();
+        if (savedBackground) applyBackground(savedBackground);
     });
 })();

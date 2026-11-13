@@ -58,6 +58,8 @@
                 <label class="form-check-label" for="theme-toggle">Dark mode</label>
             </div>
             <p id="theme-status" class="small mt-2 mb-0" role="status">Light mode is on.</p>
+            <button id="change-background" type="button" class="btn btn-outline-primary btn-sm w-100 mt-3" aria-describedby="background-status">Change background color</button>
+            <p id="background-status" class="small mt-2 mb-0" role="status">Background: default.</p>
         </div>
     </aside>
     </div>
@@ -223,9 +225,6 @@
     <!-- Assignment 5, task 2: click events and a two-step form. -->
     <section class="card p-3 p-lg-4 my-3 my-lg-4" aria-labelledby="planner-title">
         <h2 id="planner-title">Plan Your Routine</h2>
-        <button type="button" id="show-time" class="btn btn-outline-primary align-self-start">Show current time</button>
-        <p id="check-in-time" class="my-2" aria-live="polite">Ready for a daily check-in?</p>
-
         <form id="routine-planner" novalidate>
             <p id="planner-progress" class="fw-semibold" aria-live="polite">Step 1 of 2</p>
             <fieldset class="planner-step">

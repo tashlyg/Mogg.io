@@ -47,6 +47,8 @@
                 <label class="form-check-label" for="theme-toggle">Dark mode</label>
             </div>
             <p id="theme-status" class="small mt-2 mb-0" role="status">Light mode is on.</p>
+            <button id="change-background" type="button" class="btn btn-outline-primary btn-sm w-100 mt-3" aria-describedby="background-status">Change background color</button>
+            <p id="background-status" class="small mt-2 mb-0" role="status">Background: default.</p>
         </div>
     </aside>
     <main class="page-main">
@@ -79,20 +81,25 @@
       </table>
     </div>
 
-    <div class="card p-3 p-lg-4 my-3 my-lg-4">
-      <h4>My Fih Tier List</h4>
-      <ol>
-        <li>Manta Ray</li>
-        <li>Sailfish</li>
-        <li>Pufferfish</li>
-        <li>Swordfish</li>
-        <li>Blue Tang</li>
-        <li>Seahorse</li>
-        <li>Basking Shark</li>
-        <li>Hammerhead Shark</li>
-        <li>Whale Shark</li>
-      </ol>
-    </div>
+    <section class="card p-3 p-lg-4 my-3 my-lg-4" aria-labelledby="mogg-stats-title">
+      <h2 id="mogg-stats-title">My Mogg Stats</h2>
+      <p>Just-for-fun stats from my journey: more confidence, better habits, and a little friendly competition.</p>
+      <div class="row text-center">
+        <p class="col-12 col-sm-4 mb-3">
+          <span class="stat-number">100</span>
+          <span class="d-block">People mogged</span>
+        </p>
+        <p class="col-12 col-sm-4 mb-3">
+          <span class="stat-number">30</span>
+          <span class="d-block">Days of consistency</span>
+        </p>
+        <p class="col-12 col-sm-4 mb-3">
+          <span class="stat-number">12</span>
+          <span class="d-block">Workouts completed</span>
+        </p>
+      </div>
+      <p class="mb-0">Next goal: reach 150 people mogged and keep the daily routine going.</p>
+    </section>
 
     <div class="card p-3 p-lg-4 my-3 my-lg-4">
       <h4>Current Goals</h4>
